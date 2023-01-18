@@ -1,0 +1,104 @@
+/* header */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 6vh;
+  margin-top: 5vh;
+  margin-left: 7vw;
+  margin-right: 7vw;
+  margin-bottom: 5vh;
+}
+
+/* formatting links */
+.header > a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* part 1 */
+.logo {
+  width: 7vh;
+  height: 7vh;
+  margin-right: 3vw;
+}
+
+/* part 2 */
+.header > ul {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+.headerCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7vw;
+  border: solid 1px #fff;
+}
+
+.headerCard:hover {
+  background-color: #CCC;
+  border: solid 1px #CCC;
+  border-radius: 5px;
+  transition: .75s;
+}
+
+.headerCard > a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* part 3 */
+.header > .loginIcon {
+  display: flex;
+  flex-grow: 2;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header > .loginIcon > .circle {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: solid 1px #333;
+  border-radius: 20px;
+  width: auto;
+}
+
+.header > .loginIcon > .circle > .username {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  margin-right: 1vw;
+  margin-left: 1vw;
+}
+
+.header > .loginIcon > .circle > .dropdown-toggle {
+  margin-right: 1vw;
+}
+
+.header > .loginIcon > .circle > a > img {
+  width: 7vh;
+  height: 7vh;
+  border: solid 1px #fff;
+  border-radius: 100%;
+}
+
+.header > .loginIcon > .circle > ul > form:hover{
+  background-color: #ddd;
+  transition: .5s;
+}
+
+.header > .loginIcon > .circle > ul > form > li > input {
+  background-color: #0000;
+  color: #000;
+  border: solid 1px #0000;
+  height: 100%;
+  width: 100%;
+}
