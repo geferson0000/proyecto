@@ -7,7 +7,7 @@
 
   <!-- part 1 logo and title -->
   <img class="logo" src="Img/logo.png" alt="100%-San-Agustin" />
-  <h1 class="title">Login</h1>
+  <h1 class="title">Login rama master</h1>
 
   <!-- part 2 input - username -->
   <div class="form-label-group">
