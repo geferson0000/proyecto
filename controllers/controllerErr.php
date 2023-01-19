@@ -1,8 +1,11 @@
 <?php
+require_once './libs/controller.php';
 
-class ControllerErr {
+class ControllerErr extends Controller {
   function __construct(){
-    echo '<p>error</p>';
+    parent::__construct();
+    $this->view->message = 'error changing the resources';
+    $this->view->render('error');
   }
 }
 

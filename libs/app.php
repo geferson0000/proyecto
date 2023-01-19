@@ -13,8 +13,8 @@ class app {
     $fileControllers = './controllers/' . $url[0] . '.php';
     if (file_exists($fileControllers)) {
       require_once $fileControllers;
+      $controller = new $url[0];
       if (isset($url[1])) {
-        $controller = new $url[0];
         $controller->{$url[1]}();
       }
     } else {
