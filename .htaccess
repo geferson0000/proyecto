@@ -1,2 +1,2 @@
-ReWriteEngine on
-ReWriteRule ^(.*)$ index.php?url=$1 [L, QSA] 
+RewriteEngine on
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
