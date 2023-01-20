@@ -1,8 +1,10 @@
 <?php
 
 class Model {
+
+  public $db;
   function __construct(){
-    echo '<p>error</p>';
+    $this->db = new Database();
   }
 }
 

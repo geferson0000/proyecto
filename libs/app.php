@@ -1,9 +1,8 @@
 <?php
 require_once './controllers/controllerErr.php';
-class app {
+class App {
   function __construct(){
-    echo '<p>app</p>';
-    $url = $_GET['url'];
+    $url = isset($_GET['url']) ? $_GET['url'] : 'main';
 
     // formatting url
     $url = rtrim($url, '/');

@@ -1,5 +1,4 @@
 <?php
-require_once './libs/controller.php';
 
 class ControllerErr extends Controller {
   function __construct(){

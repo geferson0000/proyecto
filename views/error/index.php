@@ -7,6 +7,15 @@
   <title>error view</title>
 </head>
 <body>
-  <h1 style="color: red;"><?php echo $this->message ?></h1>
+<?php require 'views/header.php'; ?>
+  <h1 class="contentPage"><?php echo $this->message ?></h1>
+  <style>
+    .contentPage {
+      display: flex;
+      justify-content: center;
+      translate: 0px 50px;
+      color: red;
+    }
+  </style>
 </body>
 </html>
