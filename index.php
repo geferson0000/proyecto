@@ -12,6 +12,6 @@ if ($_SESSION["id"]) {
   };
   template($content, 'Main page');
 } else {
-  comeBack("login.php");
+  comeBack("login.php")
 }
 ?>
