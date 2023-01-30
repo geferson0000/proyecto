@@ -15,6 +15,7 @@
 //   comeBack("login.php");
 // }
 
+// Sections requires
 require_once './libs/database.php';
 require_once './libs/model.php';
 require_once './libs/controller.php';
@@ -23,6 +24,7 @@ require_once './libs/app.php';
 
 require_once 'config.php';
 
+// instance for App class from app.php
 $app = new App();
 
 ?>
