@@ -1,9 +1,9 @@
 <?php
-include_once('./module/html.php');
+// include_once('./module/html.php');
 
-$content = function(){
-  include_once('./module/signupHtml.php');
-};
+// $content = function(){
+//   include_once('./module/signupHtml.php');
+// };
 
-template($content, 'Sign up');
+// template($content, 'Sign up');
 ?>

@@ -1,6 +1,7 @@
 <?php
 
 class Link {
+  public $db;
   public function __construct($__host, $__userDB, $__passDB, $database){
     $dns = "mysql: host=$__host; dbname=$database";
     try {
