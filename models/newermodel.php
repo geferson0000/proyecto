@@ -1,7 +1,8 @@
 <?php
 
-class NewModel extends Model{
+class newerModel extends Model{
   public function __construct(){
+    echo "<div class='result'>new Model loaded</div>";
     parent::__construct();
 
   }
@@ -11,7 +12,7 @@ class NewModel extends Model{
   }
   public function insert(){
     // insert data on database
-    echo "insertar datos";
+    echo "<div class='result'>data inserted</div>";
   }
   public function update(){
     // update data on database

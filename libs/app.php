@@ -7,12 +7,20 @@ class App {
     // formatting url
     $url = rtrim($url, '/');
     $url = explode('/', $url);
-    // var_dump($url);
 
+    if(empty($url[0])) {
+      $fileControllers = './controllers/' . $url[0] . '.php';
+      require_once($fileControllers);
+      $controller = new Main();
+      $controller->loadModel("main");
+    }
+    
     $fileControllers = './controllers/' . $url[0] . '.php';
     if (file_exists($fileControllers)) {
       require_once $fileControllers;
       $controller = new $url[0];
+      $controller->loadModel($url[0]);
+      
       if (isset($url[1])) {
         $controller->{$url[1]}();
       }

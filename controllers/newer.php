@@ -6,7 +6,8 @@ class Newer extends Controller {
   }
 
   function studentRegister(){
-    echo "student registered";
+      echo "<div class='result'>using method studentRegistered()</div>";
+    $this->model->insert();
   }
 }
 

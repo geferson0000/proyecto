@@ -8,6 +8,7 @@ class Controller {
     $this -> view = new View();
   }
   function loadModel($model){
+    echo "<div class='result'>Loading model</div>";
     $url = 'models/' . $model . 'model.php';
 
     if (file_exists($url)){

@@ -5,16 +5,16 @@
 //     define('HOST', 'localhost');
 
 class Database {
-  private $host;
-  private $user;
-  private $password;
-  private $dbname;
-  private $db;
+  public $host;
+  public $user;
+  public $password;
+  public $dbname;
   function __construct(){
     $this->host = constant('HOST');
     $this->user = constant('USER');
-    $this->password = constant('PASSWORD');
+    $this->password = constant('PASS');
     $this->dbname = constant('DATABASE');
+    echo "<div class='result'>Database connected</div>";
   }
 
   function connect(){
