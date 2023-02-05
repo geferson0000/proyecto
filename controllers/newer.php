@@ -4,6 +4,10 @@ class Newer extends Controller {
     parent :: __construct();
     $this->view->render('newer');
   }
+
+  function studentRegister(){
+    echo "student registered";
+  }
 }
 
 ?>

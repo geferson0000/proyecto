@@ -11,6 +11,7 @@ class NewModel extends Model{
   }
   public function insert(){
     // insert data on database
+    echo "insertar datos";
   }
   public function update(){
     // update data on database
