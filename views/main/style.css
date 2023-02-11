@@ -1,0 +1,5 @@
+.contentPage {
+  display: flex;
+  justify-content: center;
+  translate: 0px 50px;
+}
