@@ -3,13 +3,10 @@
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/public/bootstrap/CSS/bootstrap.css">
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/public/css/header.css">
 
+
 <!-- navbar -->
 <div class="navbar activeNavbar">
-  
   <!-- NAV TOP -->
-  <!-- button -->
-  
-  
   <div class="nav-top">
     <a class="nav-icon" href="index.php">
       <img src="<?php echo constant('URL'); ?>views/public/img/logo.png" class="logo" alt="100%SanAgustin"></img>
@@ -58,19 +55,43 @@
   <div class="nav-links">
     <ul>
       <li>
-        <div>
+        <div class="links-title">
+          <img src="<?php echo constant('URL'); ?>views/public/img/dashboard.svg" alt="dashboard">
           <span>Dashboard</span>
-          <a href="">Resumen</a> 
-          <a href='#'>History</a>
-          <a href='#'>Statistics</a>
+        </div>
+        <div class="links-list links-list-desactive">
+          <a href="">
+            <img src="<?php echo constant('URL'); ?>views/public/img/resume.svg" alt="resumen">
+            <span>Resumen</span>
+          </a> 
+          <a href='#'>
+            <img src="<?php echo constant('URL'); ?>views/public/img/history.svg" alt="history">
+            <span>History</span>
+          </a>
+          <a href='#'>
+            <img src="<?php echo constant('URL'); ?>views/public/img/statistics.svg" alt="statistics">
+            <span>Statistics</span>
+          </a>
         </div>
       </li>
       <li>
-        <div>
+        <div class="links-title">
+          <img src="<?php echo constant('URL'); ?>views/public/img/register.svg" alt="register">
           <span>Register</span>
-          <a href="">Students</a> 
-          <a href='#'>Teachers</a>
-          <a href='#'>Course</a>
+        </div>
+        <div class="links-list">
+          <a href="">
+            <img src="<?php echo constant('URL'); ?>views/public/img/student.svg" alt="student">
+            <span>Students</span> 
+          </a> 
+          <a href='#'>
+            <img src="<?php echo constant('URL'); ?>views/public/img/teacher.svg" alt="teachers">
+            <span>Teachers</span>
+          </a>
+          <a href='#'>
+            <img src="<?php echo constant('URL'); ?>views/public/img/course.svg" alt="course">
+            <span>Course</span>
+          </a>
         </div>
       </li>      
       <li>
@@ -82,10 +103,19 @@
         <a href="<?php echo constant('URL'); ?>newer">newer</a>
       </li>
       <li>
-        <div>
+        <div class="links-title">
+          <img src="<?php echo constant('URL'); ?>views/public/img/settings.svg" alt="settings">
           <span>Settings</span>
-          <a href="">Edit my user</a> 
-          <a href='#'>Edit another user</a>
+        </div>
+        <div class="links-list links-list-desactive">
+          <a href="">
+            <img src="<?php echo constant('URL'); ?>views/public/img/editMyUser.svg" alt="editMyUser">
+            <span>Edit my user</span>
+          </a> 
+          <a href='#'>
+            <img src="<?php echo constant('URL'); ?>views/public/img/editAnotherUser.svg" alt="editAnotherUser">
+            <span>Edit another user</span>
+          </a>
         </div>
       </li>
     </ul>
@@ -94,4 +124,12 @@
 
 </div>
 <!-- end navbar -->
+
+<div class="headerTitle">
+  <span>Title</span>
+</div>
+
+<div class="headerTitleRelative"></div>
+
 <script src="<?php echo constant('URL') ?>views/public/Javascript/header.js"></script>
+<script src="<?php echo constant('URL') ?>views/public/bootstrap/JS/bootstrap.bundle.js"></script>

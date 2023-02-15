@@ -9,6 +9,36 @@
 </head>
 <body>
 <?php require 'views/header.php'; ?>
-  <h1 class="contentPage">I am help</h1>
+<h1 class="titlePage">I am help</h1>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>v
 </body>
 </html>

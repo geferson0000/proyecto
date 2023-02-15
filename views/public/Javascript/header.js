@@ -7,7 +7,6 @@ const $two = document.querySelector('.two');
 const $three = document.querySelector('.three');
 const $navbar = document.querySelector('.navbar');
 let navbar = true;
-let settingsArrow = false;
 
 $navIconUser.addEventListener('click', e => e.preventDefault());
 
@@ -30,15 +29,39 @@ $sideButton.addEventListener('click', (e)=>{
     $navbar.classList.remove('activeNavbar');
     $sideButton.classList.remove('activeSideButton');
   }
-
 });
 
+
 $settingsIcon.addEventListener('click', (e) => {
-  if (!settingsArrow){
-    settingsArrow = true;
-    $settingsList.classList.add('activeSettings');
+  if ($settingsList.style.maxHeight != '20vh'){
+    $settingsList.style.maxHeight = '20vh';
+    $settingsList.style.maxWidth = '20vw';
   } else {
-    settingsArrow = false;
-    $settingsList.classList.remove('activeSettings');
+    $settingsList.style.maxHeight = '0vh';
+    $settingsList.style.maxWidth = '0vw';
   }
+});
+
+
+const $linksTitle = document.querySelectorAll('.links-title');
+const $linksList = document.querySelectorAll('.links-list');
+
+function toggleList(list) {
+  if (list.style.maxHeight != '15vh') {
+    list.style.maxHeight = '15vh';
+  } else {
+    list.style.maxHeight = '0vh';
+  }
+}
+
+$linksTitle[0].addEventListener('click', e => { 
+  toggleList($linksList[0])
+});
+
+$linksTitle[1].addEventListener('click', e => { 
+  toggleList($linksList[1])
+});
+
+$linksTitle[2].addEventListener('click', e => { 
+  toggleList($linksList[2])
 });
