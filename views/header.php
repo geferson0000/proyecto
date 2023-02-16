@@ -27,7 +27,7 @@
     </div>
     <div class="settings">
       <img class="settingsIcon" src="<?php echo constant('URL'); ?>views/public/img/arrowDown.png" alt="arrow">
-      <ul class='settings-list desactiveSettings'>
+      <ul class='settings-list'>
         <li class="itemOne">
           <a href="#">
             Configuración
@@ -41,7 +41,7 @@
               id="csrf"
               style="display: none;"
             >
-            <input class="itemTwo" type="submit" value="Logout">
+            <input class="itemTwo-input" type="submit" value="Logout">
           </form>
         </li>
       </ul>

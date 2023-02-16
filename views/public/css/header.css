@@ -16,7 +16,7 @@ a {
 :root {
   --blue: #1e90ff;
   --yellow: #cada2a;
-  --gray: #333;
+  --gray: #3f3f3f;
   --white: #fff;
   --red: #dc3545;
   --success: #28a745;
@@ -72,7 +72,7 @@ a {
 .navbar { /* structure */
   position: fixed;
   translate: -20vw 0px;
-  padding-right: 2vh;
+  padding: 0px!important;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -89,6 +89,9 @@ a {
 
 /* TOP */
 .nav-top {
+  background-image: url("http://localhost/proyecto/views/public/img/foto1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   border-bottom: solid 2px #555;
   height: 15vh;
   width: 100%;
@@ -150,6 +153,7 @@ a {
 }
 
 .settings-list {
+  padding: 0px;
   max-width: 0vw;
   max-height: 0vh;
   overflow: hidden;
@@ -157,23 +161,25 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: 1s;
+  align-items: center;
+  transition: .3s;
   background-color: #555;
-  border: solid 1px #555;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: -2px 2px 10px #0005;
-  translate: -5vw 5vh;
+  translate: 0px 4vh;
 }
 
 
-.desactiveSettings > .itemOne {
-  margin-bottom: 1vw;
+.settings-list > .itemOne {
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin-bottom: 1vh;
   background-color: var(--gray);
   border: solid 1px var(--gray);
-  border-radius: 5px;
+  width: 100%;
 }
 
-.desactiveSettings > .itemOne > a {
+.settings-list > .itemOne > a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -181,14 +187,24 @@ a {
   color: var(--white);
 }
 
-.desactiveSettings > li > form > .itemTwo {
+.settings-list > .itemTwo {
+  width: 100%;
+}
+
+.settings-list > .itemTwo > form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.settings-list > .itemTwo > form > .itemTwo-input {
   height: 4vh;
-  width: 8vw;
   background-color: var(--blue);
   color: var(--white);
   border: solid 1px #1e90ff;
-  border-radius: 5px;
+  width: 100%;
 }
+
 
 /* LINKS */
 
@@ -282,12 +298,12 @@ a {
   flex-grow: 0;
   height: 8vh;
   width: 8vh;
-  translate: 14vw -4.5vh;
+  translate: 13vw -3.5vh;
   transition: 1s;
 }
 
 .activeSideButton {
-  translate: -6vw -4.5vh;
+  translate: -7vw -3.5vh;
   transition: 1s;
 }
 
@@ -345,67 +361,3 @@ a {
   transition: all 1s;
   transform: rotate(-45deg);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-body{
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.hide {
-    max-height: 0 !important;
-}
-
-.dropdown{
-	border: 0.1em solid black;
-	width: 10em;
-	margin-bottom: 1em;
-}
-
-.dropdown .title{
-	margin: .3em .3em .3em .3em;	
-	width: 100%;
-}
-
-.dropdown .title .fa-angle-right{
-	float: right;
-	margin-right: .7em;
-	transition: transform .3s;
-}
-
-.dropdown .menu{
-	transition: max-height .5s ease-out;
-	max-height: 20em;
-	overflow: hidden;
-}
-
-.dropdown .menu .option{
-	margin: .3em .3em .3em .3em;
-	margin-top: 0.3em;
-}
-
-.dropdown .menu .option:hover{
-	background: rgba(0,0,0,0.2);
-}
-
-.pointerCursor:hover{
-	cursor: pointer;
-}
-
-.rotate-90{
-	transform: rotate(90deg);
-}
-
-
-
-
