@@ -1,51 +1,126 @@
-
 create database SanAgustinPrueba;
 use SanAgustinPrueba;
 
-create table student(
-cedula int(5) not null primary key,
-firstName varchar(50) not null,
-secondName int(6) not null,
-firstSurname varchar(20) not null,
-secondSurname varchar(50) not null,
-gender varchar(50) not null,
-birthdate varchar(50) not null,
-phone varchar(50) not null,
--- FOREIGN KEY (codproducto) REFERENCES producto(codproducto)
+create table payment(
+id int(4) not null AUTO_INCREMENT primary key,
+datePayment int(10) not null,
+statusPayment int(1) not null
 );
 
 create table student(
-cedula int(5) not null primary key,
-firstName varchar(50) not null,
-secondName int(6) not null,
-firstSurname varchar(20) not null,
-secondSurname varchar(50) not null,
-gender varchar(50) not null,
-birthdate varchar(50) not null,
-phone varchar(50) not null,
-adress varchar(50) not null
+cedula int(8) not null primary key,
+firstName varchar(30) not null,
+secondName varchar(30),
+firstSurname varchar(30) not null,
+secondSurname varchar(50),
+gender int(1) not null,
+birthdate varchar(10) not null,
+adress varchar(50) not null,
+phone int(50)
 );
 
-create table teacher(
-cedula int(5) not null primary key,
-firstName varchar(50) not null,
-secondName int(6) not null,
-firstSurname varchar(20) not null,
-secondSurname varchar(50) not null,
-gender varchar(50) not null,
-birthdate varchar(50) not null,
-phone varchar(50) not null,
-adress varchar(50) not null
--- FOREIGN KEY (codproducto) REFERENCES producto(codproducto)
+create table parent(
+cedula int(8) not null primary key,
+firstName varchar(30) not null,
+secondName varchar(30) not null,
+firstSurname varchar(30) not null,
+secondSurname varchar(30) not null,
+gender int(1) not null,
+birthdate varchar(10) not null,
+phone varchar(11) not null,
+student int(4)not null,
+FOREIGN KEY (student) REFERENCES student(cedula)
 );
+
 
 create table course(
 id int(4) not null AUTO_INCREMENT primary key,
-nameCourse int(20),
-descripton int(6) not null,
-creationDate varchar(20) not null
--- FOREIGN KEY (codproducto) REFERENCES producto(codproducto)
+nameCourse varchar(20) not null,
+descripton varchar(512),
+creationDate varchar(10) not null,
+cost int(6) not null,
+place varchar(20) not null
 );
+
+create table levelCourse(
+id int(4) not null AUTO_INCREMENT primary key,
+levelCourse int(4) not null,
+approbation int(1) not null,
+course int(4)not null,
+courseBefore int(4)not null,
+FOREIGN KEY (course) REFERENCES course(id),
+FOREIGN KEY (courseBefore) REFERENCES levelCourse(id)
+);
+
+create table teacher(
+cedula int(8) not null primary key,
+firstName varchar(30) not null,
+secondName varchar(30),
+firstSurname varchar(30) not null,
+secondSurname varchar(30),
+gender int(1) not null,
+birthdate varchar(10) not null,
+phone varchar(11),
+adress varchar(50) not null,
+levelCourse int(4)not null,
+FOREIGN KEY (levelCourse) REFERENCES levelCourse(id)
+);
+
+
+create table signup(
+id int(4) not null AUTO_INCREMENT primary key,
+dateSignup int(10) not null,
+course int(4)not null,
+student int(4)not null,
+payment int(4)not null,
+FOREIGN KEY (course) REFERENCES course(id),
+FOREIGN KEY (student) REFERENCES student(cedula),
+FOREIGN KEY (payment) REFERENCES payment(id)
+);
+
+--* ALL IS OK!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 -- 4) Crear trigger triggermodifproducto
