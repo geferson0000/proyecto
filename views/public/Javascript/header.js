@@ -6,7 +6,7 @@ const $one = document.querySelector('.one');
 const $two = document.querySelector('.two');
 const $three = document.querySelector('.three');
 const $navbar = document.querySelector('.navbar');
-let navbar = true;
+let navbar = false;
 
 $navIconUser.addEventListener('click', e => e.preventDefault());
 

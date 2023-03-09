@@ -6,7 +6,7 @@ class View {
   }
 
   function render($name) {
-    require_once ('./views/' . $name . '/index.php');
+    require ('./views/' . $name . '/index.php');
   }
 }
 

@@ -1,9 +1,5 @@
 <?php
 
-//     define('USER', 'root');
-//     define('PASS', 'Op.redo04');
-//     define('HOST', 'localhost');
-
 class Database {
   public $host;
   public $user;
@@ -18,6 +14,7 @@ class Database {
   }
 
   function connect(){
+    
     $dns = 'mysql: host=' . $this->host . ';dbname='. $this->dbname;
     $options = [
       PDO::ATTR_ERRMODE          => PDO::ERRMODE_EXCEPTION,

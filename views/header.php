@@ -5,16 +5,16 @@
 
 
 <!-- navbar -->
-<div class="navbar activeNavbar">
+<div class="navbar desactiveNavbar">
   <!-- NAV TOP -->
   <div class="nav-top">
     <a class="nav-icon" href="index.php">
       <img src="<?php echo constant('URL'); ?>views/public/img/logo.png" class="logo" alt="100%SanAgustin"></img>
     </a>
-    <button class='sideButton activeSideButton'>
-      <div class="one activeOne"></div>
-      <div class="two activeTwo"></div>
-      <div class="three activeThree"></div>
+    <button class='sideButton desactiveSideButton'>
+      <div class="one desactiveOne"></div>
+      <div class="two desactiveTwo"></div>
+      <div class="three desactiveThree"></div>
     </button>
   </div>
   <!-- NAV TOP -->
@@ -80,7 +80,7 @@
           <span>Register</span>
         </div>
         <div class="links-list">
-          <a href="">
+          <a  href="<?php echo constant('URL'); ?>student">
             <img src="<?php echo constant('URL'); ?>views/public/img/student.svg" alt="student">
             <span>Students</span> 
           </a> 
@@ -88,20 +88,14 @@
             <img src="<?php echo constant('URL'); ?>views/public/img/teacher.svg" alt="teachers">
             <span>Teachers</span>
           </a>
-          <a href='#'>
+          <a href='<?php echo constant('URL'); ?>course'>
             <img src="<?php echo constant('URL'); ?>views/public/img/course.svg" alt="course">
             <span>Course</span>
           </a>
         </div>
       </li>      
-      <li>
-        <!-- <a href='#'>calendar</a> -->
-        <a href="<?php echo constant('URL'); ?>help">help</a>
-      </li>
-      <li>
-        <!-- <a href='#'>balance</a> -->
-        <a href="<?php echo constant('URL'); ?>newer">newer</a>
-      </li>
+      <!-- <a href='#'>calendar</a> -->
+      <!-- <a href='#'>balance</a> -->
       <li>
         <div class="links-title">
           <img src="<?php echo constant('URL'); ?>views/public/img/settings.svg" alt="settings">

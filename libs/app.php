@@ -13,6 +13,7 @@ class App {
       require_once($fileControllers);
       $controller = new Main();
       $controller->loadModel("main");
+      $controller->render();
     }
     
     $fileControllers = './controllers/' . $url[0] . '.php';
@@ -21,8 +22,11 @@ class App {
       $controller = new $url[0];
       $controller->loadModel($url[0]);
       
+      
       if (isset($url[1])) {
         $controller->{$url[1]}();
+      } else {
+        $controller->render();
       }
     } else {
       $controller = new ControllerErr();

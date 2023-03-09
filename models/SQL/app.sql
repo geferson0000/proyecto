@@ -8,7 +8,7 @@ statusPayment int(1) not null
 );
 
 create table student(
-cedula int(8) not null primary key,
+cedula int(8) not null primary key, --* ID
 firstName varchar(30) not null,
 secondName varchar(30),
 firstSurname varchar(30) not null,
@@ -78,6 +78,8 @@ FOREIGN KEY (student) REFERENCES student(cedula),
 FOREIGN KEY (payment) REFERENCES payment(id)
 );
 
+insert into student (cedula, firstName, secondName, firstSurname, secondSurname, gender, birthdate, adress, phone) 
+values (28563229, 'geferson', 'leonaiker', 'moreno', 'palacions', 1, '04/04/2001', 'caracas', 41);
 --* ALL IS OK!
 
 
@@ -165,8 +167,6 @@ select * from modifproducto;
 
 -- 6) Agragar 5 registros en tabla producto
 -- arroz
-insert into producto (codproducto, nomproducto, precio, fechaActualizada, stock) 
-values (100, 'Arroz Mary', 25, '12-12-2022', 1000);
 
 -- aceite
 insert into producto (codproducto, nomproducto, precio, fechaActualizada, stock) 

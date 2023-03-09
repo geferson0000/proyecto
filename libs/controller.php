@@ -8,12 +8,13 @@ class Controller {
     $this -> view = new View();
   }
   function loadModel($model){
-    echo "<div class='result'>Loading model</div>";
     $url = 'models/' . $model . 'model.php';
-
+    echo "<div class='result'>Loading model</div>";
+    
     if (file_exists($url)){
       require $url;
-
+      
+      echo "<div class='result'>model loaded</div>";
       $modelName = $model . 'Model';
       $this->model = new $modelName();
     }
