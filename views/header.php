@@ -3,23 +3,17 @@
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/public/bootstrap/CSS/bootstrap.css">
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/public/css/header.css">
 
-
 <!-- navbar -->
-<div class="navbar desactiveNavbar">
+<div class="navbar">
   <!-- NAV TOP -->
   <div class="nav-top">
     <a class="nav-icon" href="index.php">
       <img src="<?php echo constant('URL'); ?>views/public/img/logo.png" class="logo" alt="100%SanAgustin"></img>
     </a>
-    <button class='sideButton desactiveSideButton'>
-      <div class="one desactiveOne"></div>
-      <div class="two desactiveTwo"></div>
-      <div class="three desactiveThree"></div>
-    </button>
   </div>
   <!-- NAV TOP -->
   
-  <!-- NAV HEADER -->
+  <!-- NAV USER -->
   <div class="nav-user">
     <div class="nav-iconUser">
       <img src="<?php echo constant('URL'); ?>views/public/img/user.svg" />
@@ -46,9 +40,8 @@
         </li>
       </ul>
     </div>
-
   </div>
-  <!-- NAV HEADER -->
+  <!-- NAV USER -->
 
 
   <!-- NAV LINKS -->
@@ -119,11 +112,9 @@
 </div>
 <!-- end navbar -->
 
-<div class="headerTitle">
-  <span>Title</span>
-</div>
+<span class="headerTitle">Title</span>
 
-<div class="headerTitleRelative"></div>
 
-<script src="<?php echo constant('URL') ?>views/public/Javascript/header.js"></script>
+<script src="<?php echo constant('URL') ?>views/public/Javascript/linkListHeader.js"></script>
+<script src="<?php echo constant('URL') ?>views/public/Javascript/settingsIconHeader.js"></script>
 <script src="<?php echo constant('URL') ?>views/public/bootstrap/JS/bootstrap.bundle.js"></script>

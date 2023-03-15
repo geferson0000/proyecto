@@ -2,21 +2,47 @@
   --table: #9d9c9c;
 }
 
-.content {
-  display: grid;
-  grid-template-areas: 
-  "title title title title"
-  "table table table control";
-  width: 100vw;
+body {
+  margin: 0px;
+  padding: 0px;
+  /* background-color: #5d67f1; */
 }
 
-.title {
-  grid-area: title;
-  
+.content {
+  background-color: #ccc!important;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 77.5vw;
+  margin-left: 20vw;
+  align-items: center;
+  padding-top: 5vh;
+  border-radius: 20px;
 }
+
+.wave {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  background-image: url(../public/img/wave.png);
+  background-size: 100vw 10vh;
+  animation: wave 30s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    background-position-x: 0vw;
+  }
+
+  100% {
+    background-position-x: 100vw;
+  }
+}
+
 
 .table-student { 
-  grid-area: table;
 
   /* grid */
   display: grid;
@@ -41,18 +67,20 @@
   flex-direction: column;
   background-color: #555;
   width: fit-content;
-  margin-left: 3vw;
+  height: fit-content;
+  box-shadow: 2px 5px 20px #0005;
+  margin-bottom: 5vh;
 }
 
 .table-number {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2c6ba5;
+  background-color: #25292d;
   width: 4vh;
   height: 4vh;
   color: white;
-  border: solid 1px #2c6ba5;
+  border: solid 1px #25292d;
   border-radius: 100%;
   margin: 1vh;
   margin-bottom: 0px;
@@ -65,7 +93,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2c6ba5;
+  background-color: var(--blue);
   color: white;
 }
 
@@ -103,33 +131,43 @@
   flex-direction: column;
   background-color: #555;
   width: fit-content;
-  margin-left: 3vw;
+
   justify-content: space-around;
+  box-shadow: 2px 5px 20px #0005;
+  margin-bottom: 5vh;
+  translate: 20vw 0vw;
 }
 
 .control-buttons {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-bottom: 1vh;
+  margin-bottom: 2vh;
 }
 
-.control-buttons > input {
+.control-buttons > button {
   border: solid 1px #ffffff00;
-  border-radius: 10px;
+  border-radius: 8px;
   color: white;
-  padding: 1vh;
 }
 
-.seeMore {
-  background-color: #2c6ba5;
+.control-buttons > button > img {
+  width: 2.5vw;
 }
 
-.edit {
+.controlAdd {
+  background-color: var(--bs-yellow);
+}
+
+.controlSeeMore {
+  background-color: var(--blue);
+}
+
+.controlEdit {
   background-color: #46992c;
 }
 
-.delete {
+.controlDelete {
   background-color: #d43636;
 }
 
@@ -151,14 +189,187 @@
 
 }
 
-
 .searchSubmit {
   border: solid 1px #fff0;
   border-radius: 0px 10px 10px 0px;
   color: white;
-  background-color: #2c6ba5;
+  background-color: var(--blue);
   padding: 1vh;
 }
+
+.modal-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  z-index: 20;
+  transition: 1s;
+}
+
+.modal-add-active {
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 3em 2.5em;
+  transition: 1s;
+}
+
+.modal-add > h1 {
+  display: none;
+}
+
+.modal-add-active > h1 {
+  display: block;
+}
+
+.select {
+  /* This will create a positioning context for the list of options */
+  position: relative;
+
+  /* This will make our widget become part of the text flow and sizable at the same time */
+  display : inline-block;
+}
+
+.select.active,
+.select:focus {
+  outline: none;
+
+  /* This box-shadow property is not exactly required, however it's so important to be sure
+     the active state is visible that we use it as a default value, feel free to override it. */
+  box-shadow: 0 0 3px 1px #227755;
+}
+
+/* The .select selector here is syntactic sugar to be sure the classes we define are
+   the ones inside our widget. */
+  .select .optList {
+  /* This will make sure our list of options will be displayed below the value
+      and out of the HTML flow */
+  position : absolute;
+  top      : 100%;
+  left     : 0;
+}
+
+.select .optList.hidden {
+  /* This is a simple way to hide the list in an accessible way,
+      we will talk more about accessibility in the end */
+  max-height: 0;
+  visibility: hidden;
+}
+
+.select {
+  /* All sizes will be expressed with the em value for accessibility reasons
+     (to make sure the widget remains resizable if the user uses the
+     browser's zoom in a text-only mode). The computations are made
+     assuming 1em == 16px which is the default value in most browsers.
+     If you are lost with px to em conversion, try http://riddle.pl/emcalc/ */
+  font-size   : 0.625em; /* this (10px) is the new font size context for em value in this context */
+  font-family : Verdana, Arial, sans-serif;
+
+  -moz-box-sizing : border-box;
+  box-sizing : border-box;
+
+  /* We need extra room for the down arrow we will add */
+  padding : .1em 2.5em .2em .5em; /* 1px 25px 2px 5px */
+  width   : 10em; /* 100px */
+
+  border        : .2em solid #000; /* 2px */
+  border-radius : .4em; /* 4px */
+  box-shadow    : 0 .1em .2em rgba(0,0,0,.45); /* 0 1px 2px */
+
+  /* The first declaration is for browsers that do not support linear gradients.
+     The second declaration is because WebKit based browsers haven't unprefixed it yet.
+     If you want to support legacy browsers, try http://www.colorzilla.com/gradient-editor/ */
+  background : #F0F0F0;
+  background : -webkit-linear-gradient(90deg, #E3E3E3, #fcfcfc 50%, #f0f0f0);
+  background : linear-gradient(0deg, #E3E3E3, #fcfcfc 50%, #f0f0f0);
+}
+
+.select .value {
+  /* Because the value can be wider than our widget, we have to make sure it will not
+     change the widget's width */
+  display  : inline-block;
+  width    : 100%;
+  overflow : hidden;
+
+  vertical-align: top;
+
+  /* And if the content overflows, it's better to have a nice ellipsis. */
+  white-space  : nowrap;
+  text-overflow: ellipsis;
+}
+
+.select:after {
+  content : "▼"; /* We use the unicode caracter U+25BC; see http://www.utf8-chartable.de */
+  position: absolute;
+  z-index : 1; /* This will be important to keep the arrow from overlapping the list of options */
+  top     : 0;
+  right   : 0;
+
+  -moz-box-sizing : border-box;
+  box-sizing : border-box;
+
+  height  : 100%;
+  width   : 2em;  /* 20px */
+  padding-top : .1em; /* 1px */
+
+  border-left  : .2em solid #000; /* 2px */
+  border-radius: 0 .1em .1em 0;  /* 0 1px 1px 0 */
+
+  background-color : #000;
+  color : #FFF;
+  text-align : center;
+}
+
+.select .optList {
+  z-index : 2; /* We explicitly said the list of options will always overlap the down arrow */
+
+  /* this will reset the default style of the ul element */
+  list-style: none;
+  margin : 0;
+  padding: 0;
+
+  -moz-box-sizing : border-box;
+  box-sizing : border-box;
+
+  /* This will ensure that even if the values are smaller than the widget,
+     the list of options will be as large as the widget itself */
+  min-width : 100%;
+
+  /* In case the list is too long, its content will overflow vertically
+     (which will add a vertical scrollbar automatically) but never horizontally
+     (because we haven't set a width, the list will adjust its width automatically.
+     If it can't, the content will be truncated) */
+  max-height: 10em; /* 100px */
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border: .2em solid #000; /* 2px */
+  border-top-width : .1em; /* 1px */
+  border-radius: 0 0 .4em .4em; /* 0 0 4px 4px */
+
+  box-shadow: 0 .2em .4em rgba(0,0,0,.4); /* 0 2px 4px */
+  background: #f0f0f0;
+}
+
+.select .option {
+  padding: .2em .3em; /* 2px 3px */
+}
+
+.select .highlight {
+  background: #000;
+  color: #FFFFFF;
+}
+
+  
+
+
+
 
 
 

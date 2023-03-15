@@ -9,14 +9,13 @@ class Student extends Controller {
     if ($this->message != null){
       echo $this->message;
     };
+    $this->get();
     $this->view->render('student');
   }
 
   function get() {
-    echo 'get function';
     $this->view->message = $this->model->get();
     $this->message = $this->view->message;
-    $this->view->render('student');
   }
   
   function insert(){

@@ -15,7 +15,7 @@ class Alumno {
 
 class studentModel extends Model{
   public function __construct(){
-    echo "<div class='result'>new Model loaded</div>";
+    // echo "<div class='result'>new Model loaded</div>";
     parent::__construct();
   }
 

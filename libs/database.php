@@ -10,7 +10,7 @@ class Database {
     $this->user = constant('USER');
     $this->password = constant('PASS');
     $this->dbname = constant('DATABASE');
-    echo "<div class='result'>Database connected</div>";
+    // echo "<div class='result'>Database connected</div>";
   }
 
   function connect(){

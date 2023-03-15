@@ -9,12 +9,12 @@ class Controller {
   }
   function loadModel($model){
     $url = 'models/' . $model . 'model.php';
-    echo "<div class='result'>Loading model</div>";
+    // echo "<div class='result'>Loading model</div>";
     
     if (file_exists($url)){
       require $url;
       
-      echo "<div class='result'>model loaded</div>";
+      // echo "<div class='result'>model loaded</div>";
       $modelName = $model . 'Model';
       $this->model = new $modelName();
     }
