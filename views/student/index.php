@@ -12,74 +12,6 @@
 <body>
 <?php require "views/header.php"; ?>
 <div class='content'>
-  <!-- <div class="modals">
-    <div class="modal-add">
-      <form action="#" method="post">
-        <input type="number" placeholder="cedula" name="cedula">
-        <input type="text" placeholder="first name" name="first name">
-        <input type="text" placeholder="second name" name="second name">
-        <input type="text" placeholder="first surname" name="first surname">
-        <input type="text" placeholder="second surname" name="second surname">
-        <input type="checkbox" placeholder="gender" name="gender">
-        <input type="tel" placeholder="phone" name="phone">
-        <input type="date" placeholder="birhdate" name="birhdate">
-        <input type="" placeholder="adress" name="adress">
-        <!-- We add the role="listbox" attribute to our top element -->
-        <!-- <div class="select" role="listbox">
-          <span class="value">Cherry</span>
-          <!-- We also add the role="presentation" to the ul element -->
-          <!-- <ul class="optList" role="presentation"> -->
-            <!-- And we add the role="option" attribute to all the li elements -->
-            <!-- <li role="option" class="option">Cherry</li>
-            <li role="option" class="option">Lemon</li>
-            <li role="option" class="option">Banana</li>
-            <li role="option" class="option">Strawberry</li>
-            <li role="option" class="option">Apple</li> -->
-          <!-- </ul>
-        </div> -->
-<!-- 
-  </form>
-    </div> --> 
-
-
-
-
-    
-    
-    
-    
-    
-    <!-- <div class="modal-seeMore"></div>
-    <div class="modal-edit"></div>
-  </div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <div>
     <div class="control">
       <div class="control-buttons">
@@ -102,56 +34,18 @@
       </form>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <div class="table-circle">
     <div class="table-student">
       <div class='table-header'>ID</div>
       <div class='table-header'>cedula</div>
       <div class='table-header'>1st name</div>
-      <div class='table-header'>2nd name</div>
+      <!-- <div class='table-header'>2nd name</div> -->
       <div class='table-header'>1st surname</div>
-      <div class='table-header'>2nd surname</div>
+      <!-- <div class='table-header'>2nd surname</div> -->
       <div class='table-header'>gender</div>
       <div class='table-header'>birthdate</div>
-      <div class='table-header'>adress</div>
-      <div class='table-header'>phone</div>
+      <!-- <div class='table-header'>adress</div> -->
+      <!-- <div class='table-header'>phone</div> -->
       <?php
       $id = 0;
       foreach ($this->message as $student) {
@@ -174,25 +68,18 @@
         echo "<div class='table-item $colorRow'> $id </div>";
         echo "<div class='table-item $colorRow'> $student->cedula </div>";
         echo "<div class='table-item $colorRow'> $student->firstName </div>";
-        echo "<div class='table-item $colorRow'> $student->SecondName </div>";
+        // echo "<div class='table-item $colorRow'> $student->SecondName </div>";
         echo "<div class='table-item $colorRow'> $student->firstSurname </div>";
-        echo "<div class='table-item $colorRow'> $student->secondSurname </div>";
+        // echo "<div class='table-item $colorRow'> $student->secondSurname </div>";
         echo "<div class='table-item $colorRow'> $gender </div>";
         echo "<div class='table-item $colorRow'> $student->birthdate </div>";
-        echo "<div class='table-item $colorRow'> $student->adress </div>";
-        echo "<div class='table-item $colorRow'> $student->phone </div>";
+        // echo "<div class='table-item $colorRow'> $student->adress </div>";
+        // echo "<div class='table-item $colorRow'> $student->phone </div>";
       }
       ?>
     </div>
     <div class="table-number">1</div>
   </div>
-
-
-
-
-
-
-  
   <div class="wave"></div>
 </div>
 
@@ -203,27 +90,39 @@
 
 
 
+<div class="modals">
+
+  <div class="modal-add">
+    <img class="modal-close" src="<?php echo constant("URL") ?>views/public/img/close.svg" alt="close">
+    <h2>Enter student information</h2>
+    <form class="modal-add-form" action="#" method="post">
+      <input id="modal-add-cedula" type="number" placeholder="cedula" name="cedula" minlength="4" maxlength="20" required>
+      <input type="text" placeholder="first name" name="first name" minlength="4" maxlength="20" required>
+      <input type="text" placeholder="second name" name="second name" minlength="4" maxlength="20" required>
+      <input type="text" placeholder="first surname" name="first surname" minlength="4" maxlength="20" required>
+      <input type="text" placeholder="second surname" name="second surname" minlength="4" maxlength="20" required>
+      <div>
+        <input type="radio" id="html" name="fav_language" value="HTML" minlength="4" maxlength="20" required>
+        <label for="html">male</label>
+        <input type="radio" id="css" name="fav_language" value="CSS" minlength="4" maxlength="20" required>
+        <label for="css">female</label>
+      </div>
+      <input type="tel" placeholder="phone" name="phone"  minlength="4" maxlength="20" required>
+      <input type="date" placeholder="birhdate" name="birhdate"  minlength="4" maxlength="20" required>
+      <input type="" placeholder="adress" name="adress"  minlength="4" maxlength="20" required>
+      <button id="modal-add-submit" type="submit">save</button>
+    </form>
+  </div> 
+
+  <div class="modal-seeMore"></div>
+  <div class="modal-edit"></div>
+</div>
 
 
 
 
 
 
-
-<!-- <form action="<?php 
-// echo constant('URL'); 
-?>student/insert" method="POST">
-<input type="number" placeholder="DNI">
-<input type="text" placeholder="first name">
-<input type="text" placeholder="second name">
-<input type="text" placeholder="first surname">
-<input type="text" placeholder="second surname">
-<input type="text" placeholder="gender">
-<input type="text" placeholder="birthdate">
-<input type="text" placeholder="adress">
-<input type="number" placeholder="phne">
-<input type="submit" value="send">
-</form> -->
 
 <?php
 // echo "<div>";
@@ -231,7 +130,7 @@
 // echo "</div>";
 ?>
 
-<script src="<?php echo constant('URL'); ?>views/student/app.js"></script>
+<script type="module" src="<?php echo constant('URL'); ?>views/student/app.js"></script>
 </body>
 
 </html>

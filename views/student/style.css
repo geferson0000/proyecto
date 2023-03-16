@@ -11,17 +11,20 @@ body {
 .content {
   background-color: #ccc!important;
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
   width: 77.5vw;
   margin-left: 20vw;
-  align-items: center;
+  /* align-items: center; */
+  justify-content: space-evenly;
   padding-top: 5vh;
+  padding-bottom: 0px;
   border-radius: 20px;
 }
 
 .wave {
   position: relative;
+  translate: 0px 1px;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -46,7 +49,7 @@ body {
 
   /* grid */
   display: grid;
-  grid-template-columns: repeat(10, auto);
+  grid-template-columns: repeat(6, auto);
   grid-template-rows: 1fr;
   grid-auto-rows: 1fr;
   
@@ -55,7 +58,7 @@ body {
   border: solid 1px #555;
   border-radius: 10px;
   margin: 0px!important;
-  width: 70vw;
+  min-width: 45vw;
   overflow: hidden;
   row-gap: 2px;
 }
@@ -135,7 +138,7 @@ body {
   justify-content: space-around;
   box-shadow: 2px 5px 20px #0005;
   margin-bottom: 5vh;
-  translate: 20vw 0vw;
+  /* translate: 20vw 0vw; */
 }
 
 .control-buttons {
@@ -186,7 +189,6 @@ body {
 
 .searchText:focus {
   outline-color: #ffc107;
-
 }
 
 .searchSubmit {
@@ -197,179 +199,129 @@ body {
   padding: 1vh;
 }
 
-.modal-active {
+.modals {
+  opacity: 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: #111111bd;
-  display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center;
   z-index: 20;
   transition: 1s;
 }
 
-.modal-add-active {
+.modal-add {
+  opacity: 0;
   margin: auto;
   width: 90%;
-  max-width: 600px;
+  max-width: 700px;
   max-height: 90%;
   background-color: #fff;
   border-radius: 10px;
-  padding: 3em 2.5em;
+  padding: .5em .5em;
   transition: 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
+  /* padding-left: 10vw;
+  padding-right: 10vw; */
 }
 
-.modal-add > h1 {
-  display: none;
+.modal-add > h2 {
+  margin-bottom: 5vh;
 }
 
-.modal-add-active > h1 {
-  display: block;
+.modal-close {
+  align-self: flex-end;
+  background-color: #d43636d1;
+  border-radius: 10px;
 }
 
-.select {
-  /* This will create a positioning context for the list of options */
-  position: relative;
-
-  /* This will make our widget become part of the text flow and sizable at the same time */
-  display : inline-block;
+.modal-add-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+  column-gap: 2vw;
+  margin-bottom: 3vh;
 }
 
-.select.active,
-.select:focus {
-  outline: none;
-
-  /* This box-shadow property is not exactly required, however it's so important to be sure
-     the active state is visible that we use it as a default value, feel free to override it. */
-  box-shadow: 0 0 3px 1px #227755;
+#modal-add-cedula {
+  grid-column: 1/3;
 }
 
-/* The .select selector here is syntactic sugar to be sure the classes we define are
-   the ones inside our widget. */
-  .select .optList {
-  /* This will make sure our list of options will be displayed below the value
-      and out of the HTML flow */
-  position : absolute;
-  top      : 100%;
-  left     : 0;
+#modal-add-submit {
+  align-self: end;
+  grid-column: 1/3;
+  justify-self: center;
+  background-color: var(--blue);
+  border: solid 0px white;
+  border-radius: 20px;
+  box-shadow: 2px 5px 20px #0005;
+  color: #fff;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.select .optList.hidden {
-  /* This is a simple way to hide the list in an accessible way,
-      we will talk more about accessibility in the end */
-  max-height: 0;
-  visibility: hidden;
+#modal-add-submit:hover {
+  transition: .6s;
+  background-color: #ffc107;
 }
 
-.select {
-  /* All sizes will be expressed with the em value for accessibility reasons
-     (to make sure the widget remains resizable if the user uses the
-     browser's zoom in a text-only mode). The computations are made
-     assuming 1em == 16px which is the default value in most browsers.
-     If you are lost with px to em conversion, try http://riddle.pl/emcalc/ */
-  font-size   : 0.625em; /* this (10px) is the new font size context for em value in this context */
-  font-family : Verdana, Arial, sans-serif;
-
-  -moz-box-sizing : border-box;
-  box-sizing : border-box;
-
-  /* We need extra room for the down arrow we will add */
-  padding : .1em 2.5em .2em .5em; /* 1px 25px 2px 5px */
-  width   : 10em; /* 100px */
-
-  border        : .2em solid #000; /* 2px */
-  border-radius : .4em; /* 4px */
-  box-shadow    : 0 .1em .2em rgba(0,0,0,.45); /* 0 1px 2px */
-
-  /* The first declaration is for browsers that do not support linear gradients.
-     The second declaration is because WebKit based browsers haven't unprefixed it yet.
-     If you want to support legacy browsers, try http://www.colorzilla.com/gradient-editor/ */
-  background : #F0F0F0;
-  background : -webkit-linear-gradient(90deg, #E3E3E3, #fcfcfc 50%, #f0f0f0);
-  background : linear-gradient(0deg, #E3E3E3, #fcfcfc 50%, #f0f0f0);
+#modal-add-submit:active {
+  transition: .2s;
+  background-color: #dba70b;
 }
 
-.select .value {
-  /* Because the value can be wider than our widget, we have to make sure it will not
-     change the widget's width */
-  display  : inline-block;
-  width    : 100%;
-  overflow : hidden;
-
-  vertical-align: top;
-
-  /* And if the content overflows, it's better to have a nice ellipsis. */
-  white-space  : nowrap;
-  text-overflow: ellipsis;
+.modal-add-form > input, #modal-add-cedula, .modal-add-form > button {
+  font-size: 1.05rem;
+  width: 15vw;
+  height: 5vh;
+  margin-bottom: 2vh;
+  border: solid 0px #555;
+  border-bottom: solid 2px var(--blue);
+  outline-color: #5550;
+  padding-left: .5vw;
+  padding-bottom: 1.5vh;
+  padding-top: 1.5vh;
 }
 
-.select:after {
-  content : "▼"; /* We use the unicode caracter U+25BC; see http://www.utf8-chartable.de */
-  position: absolute;
-  z-index : 1; /* This will be important to keep the arrow from overlapping the list of options */
-  top     : 0;
-  right   : 0;
-
-  -moz-box-sizing : border-box;
-  box-sizing : border-box;
-
-  height  : 100%;
-  width   : 2em;  /* 20px */
-  padding-top : .1em; /* 1px */
-
-  border-left  : .2em solid #000; /* 2px */
-  border-radius: 0 .1em .1em 0;  /* 0 1px 1px 0 */
-
-  background-color : #000;
-  color : #FFF;
-  text-align : center;
+.modal-add-form > input:hover, #modal-add-cedula:hover {
+  background-color: #ddd8;
+  transition: .5s;
 }
 
-.select .optList {
-  z-index : 2; /* We explicitly said the list of options will always overlap the down arrow */
-
-  /* this will reset the default style of the ul element */
-  list-style: none;
-  margin : 0;
-  padding: 0;
-
-  -moz-box-sizing : border-box;
-  box-sizing : border-box;
-
-  /* This will ensure that even if the values are smaller than the widget,
-     the list of options will be as large as the widget itself */
-  min-width : 100%;
-
-  /* In case the list is too long, its content will overflow vertically
-     (which will add a vertical scrollbar automatically) but never horizontally
-     (because we haven't set a width, the list will adjust its width automatically.
-     If it can't, the content will be truncated) */
-  max-height: 10em; /* 100px */
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  border: .2em solid #000; /* 2px */
-  border-top-width : .1em; /* 1px */
-  border-radius: 0 0 .4em .4em; /* 0 0 4px 4px */
-
-  box-shadow: 0 .2em .4em rgba(0,0,0,.4); /* 0 2px 4px */
-  background: #f0f0f0;
+.modal-add-form > input:focus, #modal-add-cedula:focus  {
+  background-color: #ddd8;
 }
 
-.select .option {
-  padding: .2em .3em; /* 2px 3px */
+.modal-add-form > input:focus-visible, #modal-add-cedula:focus-visible  {
+  border: solid 0px #555;
+  border-bottom: solid 2px #ffc107;
 }
 
-.select .highlight {
-  background: #000;
-  color: #FFFFFF;
+.modal-add-form > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  margin-bottom: 2vh;
 }
 
-  
+.modal-add-form > div > input {
+  margin-right: .2vw;
+}
 
-
-
+.modal-add-form > div > label {
+  margin-right: 1vw;
+}
 
 
 
