@@ -1,6 +1,10 @@
 # proyecto MVC
 este proyecto es una extension al modelo MVC de la rama [master](https://github.com/geferson0000/proyecto/tree/master)
 
+## resumen del proyecto:
+
+Proyecto de programación que utiliza PHP, Javascript, HTML5, CSS3 y MySQL. Funciona como sistema de gestión administrativo. El proyecto permite la creación de usuarios y el acceso a áreas restringidas para la gestión de información de la empresa. El sistema es seguro y fácil de usar.
+
 ## tips de instalacion
 
 * revisar archivo ```config.php``` que es donde se encuentra las variables globales
@@ -32,4 +36,3 @@ este proyecto es una extension al modelo MVC de la rama [master](https://github.
 
 \
 ![vista de la pagina pagina principal](./views/public/img/mainView.png)
-
