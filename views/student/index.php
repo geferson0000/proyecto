@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/student/style.css">
+  <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/student/modal.css">
   <title>Document</title>
 </head>
 
@@ -36,14 +37,14 @@
   </div>
   <div class="table-circle">
     <div class="table-student">
-      <div class='table-header'>ID</div>
-      <div class='table-header'>cedula</div>
-      <div class='table-header'>1st name</div>
+      <div class='table-header'><b>ID</b></div>
+      <div class='table-header'><b>cedula</b></div>
+      <div class='table-header'><b>1st name</b></div>
       <!-- <div class='table-header'>2nd name</div> -->
-      <div class='table-header'>1st surname</div>
+      <div class='table-header'><b>1st surname</b></div>
       <!-- <div class='table-header'>2nd surname</div> -->
-      <div class='table-header'>gender</div>
-      <div class='table-header'>birthdate</div>
+      <div class='table-header'><b>gender</b></div>
+      <div class='table-header'><b>birthdate</b></div>
       <!-- <div class='table-header'>adress</div> -->
       <!-- <div class='table-header'>phone</div> -->
       <?php

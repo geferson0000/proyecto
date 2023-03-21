@@ -1,6 +1,7 @@
 <!-- css links -->
 
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/public/bootstrap/CSS/bootstrap.css">
+<link rel="stylesheet" href="<?php echo constant('URL'); ?>views/public/css/color.css">
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/public/css/header.css">
 
 <!-- navbar -->
