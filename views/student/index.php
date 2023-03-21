@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  
   <head>
     <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +8,6 @@
   <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/student/modal.css">
   <title>Document</title>
 </head>
-
 <body>
 <?php require "views/header.php"; ?>
 <div class='content'>
@@ -83,16 +81,7 @@
   </div>
   <div class="wave"></div>
 </div>
-
-
-
-
-
-
-
-
 <div class="modals">
-
   <div class="modal-add">
     <img class="modal-close" src="<?php echo constant("URL") ?>views/public/img/close.svg" alt="close">
     <h2>Enter student information</h2>
@@ -114,24 +103,9 @@
       <button id="modal-add-submit" type="submit">save</button>
     </form>
   </div> 
-
   <div class="modal-seeMore"></div>
   <div class="modal-edit"></div>
 </div>
-
-
-
-
-
-
-
-<?php
-// echo "<div>";
-// var_dump($this->message); 
-// echo "</div>";
-?>
-
 <script type="module" src="<?php echo constant('URL'); ?>views/student/app.js"></script>
 </body>
-
 </html>
