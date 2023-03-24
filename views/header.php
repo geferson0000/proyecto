@@ -29,11 +29,11 @@
           </a>
         </li>
         <li class="itemTwo">
-          <form action="logout.php" method="POST">
+          <form action="<?php echo constant('URL'); ?>sign/logout" method="POST">
             <input
               value="<?php echo $_SESSION["token"]; ?>" 
-              name="csrf" 
-              id="csrf"
+              name="token" 
+              id="token"
               style="display: none;"
             >
             <input class="itemTwo-input" type="submit" value="Logout">

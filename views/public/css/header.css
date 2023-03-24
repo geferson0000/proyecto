@@ -32,7 +32,7 @@ a {
 
 /* TOP */
 .nav-top {
-  background-image: url("http://localhost/proyecto/views/public/img/foto1.jpg");
+  background-image: url("../img/foto1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 15vh;

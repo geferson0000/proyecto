@@ -2,34 +2,51 @@
 require_once './controllers/controllerErr.php';
 class App {
   function __construct(){
-    $url = isset($_GET['url']) ? $_GET['url'] : 'main';
+    session_start();
+    if (isset($_GET['url']) && isset($_SESSION['user']) || $_GET['url'] == 'sign/login'){ 
+      // void url
+      $url = $_GET['url'];
+    } else {
+      // login
+      $user = json_decode(json_encode($_SESSION['user']));
+      $url = $user->id == session_id() ? 'main' : 'sign';
+    }
 
     // formatting url
     $url = rtrim($url, '/');
     $url = explode('/', $url);
+    // url shape is /controllerName/method/ => url[0]=controllerName / url[1]=method
 
-    if(empty($url[0])) {
-      $fileControllers = './controllers/' . $url[0] . '.php';
-      require_once($fileControllers);
-      $controller = new Main();
-      $controller->loadModel("main");
-      $controller->render();
-    }
+    echo "
+      <script> 
+        console.log('url[0] is ' + '/$url[0]/'); 
+        console.log('url[1] is ' + '/$url[1]/'); 
+      </script>
+    ";
     
+    // folder/controllerName.php
     $fileControllers = './controllers/' . $url[0] . '.php';
     if (file_exists($fileControllers)) {
       require_once $fileControllers;
-      $controller = new $url[0];
+      
+      // new controllerName()
+      try {
+        $controller = new $url[0];
+      } catch (\Throwable $th) {
+        var_dump($fileControllers);
+        var_dump($th);
+        throw $th;
+      }
+
+      // loadModel(with name "controllerName")
       $controller->loadModel($url[0]);
       
-      
-      if (isset($url[1])) {
-        $controller->{$url[1]}();
-      } else {
-        $controller->render();
-      }
+      // method exist?
+      isset($url[1]) ? $controller->{$url[1]}() : $controller->render();
+
     } else {
       $controller = new ControllerErr();
+      $controller->render();
     }
   }
 }

@@ -1,4 +1,4 @@
-import validator from "./validate.js";
+import validator from "../public/Javascript/validate.js";
 
 const $inputUsername = document.querySelector(".username");
 const $inputPassword = document.querySelector(".password");

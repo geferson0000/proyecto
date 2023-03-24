@@ -1,3 +1,45 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+form {
+  height: 77vh;
+}
+
+.checkbox {
+  translate: -5vw 0vw;
+  margin-bottom: 3vh;
+}
+
+.inputCheckbox {
+  width: 2.5vw;
+  height: 2.5vh;
+  translate: 0px 3px;
+}
+
+.textFooter {
+  margin-top: 5vh;
+  margin-bottom: 3vh;
+}
+
+.inputSign {
+  margin-bottom: 2vh;
+}
+
+/* .username:invalid {
+  transition: .5s;
+  border: 2px dashed #f32d2daa;
+}  */
+
+.username:valid{
+  transition: .5s;
+} 
+
+
+
 form {
   display: flex;
   flex-direction: column;
@@ -11,8 +53,8 @@ form {
 }
 
 .logo {
-  width: 10vw; 
-  height: 10vw; 
+  width: 7vw; 
+  height: 7vw; 
   margin-top: 1vh;
   margin-bottom: 3;
 }

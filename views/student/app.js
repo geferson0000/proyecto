@@ -1,5 +1,5 @@
 
-console.log('hello world!');
+console.log('hello world studentPage!');
 
 const $controlAdd = document.querySelector(".controlAdd");
 const $modal = document.querySelector(".modals");
@@ -39,6 +39,5 @@ import validator from "http://localhost/proyecto/views/public/Javascript/validat
 let number = 0;
 for (let element of $modalAddForm) {
   number++;
-  console.log("number = ", number, element);
   validator(element, "element");
 }

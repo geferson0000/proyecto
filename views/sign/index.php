@@ -1,17 +1,24 @@
-<link rel="stylesheet" href="CSS/style-form.css" />
-<link rel="stylesheet" href="CSS/logi.css" />
-<link rel="stylesheet" href="CSS/style-form-placeholder.css" />
-<form action="validateLogin.php" method="POST">
-  <input value="<?php echo $_SESSION["token"]; ?>" name="csrf" id="csrf"
-  style="display: none;" >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/public/css/style-form-placeholder.css" />
+  <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/sign/style.css">
+  <title>Document</title>
+</head>
+<body>
+<form action="<?php echo constant('URL'); ?>./sign/login" method="post">
+  <input value="<?php echo $_SESSION["token"]; ?>" name="csrf" id="csrf" style="display: none;" >
 
   <!-- part 1 logo and title -->
-  <img class="logo" src="Img/logo.png" alt="100%-San-Agustin" />
+  <img class="logo" src="<?php echo constant('URL'); ?>views/public/img/logo.png" alt="100%-San-Agustin" />
   <h1 class="title">Login rama MVC</h1>
 
   <!-- part 2 input - username -->
   <div class="form-label-group">
-    <input
+    <input 
       name="username"
       id="inputUser"
       type="text"
@@ -57,4 +64,8 @@
   <!-- part 6 footer-->
   <p class="text-muted textFooter">&copy; 2022-2023</p>
 </form>
-<script type="module" src="Javascript/validateLogin.js"></script>
+
+<script type="module" src="<?php echo constant('URL'); ?>views/sign/app.js"></script>
+  
+</body>
+</html>
