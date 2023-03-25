@@ -1,12 +1,83 @@
 body {
+  margin: 0px;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
+.background {
+  background-image: url('../public/img/foto1.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 65vw;
+}
+
+.background > div {
+  background-color: #0008;
+  height: 100%;
+  width: 100%;
+}
+
+.content-form {
+  /* background-color:  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35vw;
+  height: 100vh;
+  /* overflow: visible!important; */
+}
+
+.diagonal {
+  position: absolute;
+  clip-path: polygon(100% 0%, 100% 0%, 0% 100%, 100% 100%);
+  background-color: #37f;
+  width: 35vw;
+  height: 100vh;
+  z-index: 5;
+}
 
 form {
-  height: 77vh;
+  z-index: 10;
+  width: 30vw;
+  height: 80vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px #0008;
+  /* border-radius: 20px; */
+  box-shadow: 5px 5px 10px #0003;
+}
+
+.logo {
+  width: 7vw; 
+  height: 7vw; 
+  margin-top: 1vh;
+  margin-bottom: 3;
+}
+
+.title {
+  margin-bottom: 3vh;
+}
+
+#inputUser, #inputPassword  {
+  border: solid 2px #0000;
+  border-bottom-color: #000;
+}
+
+#inputUser:hover, #inputPassword:hover {
+  background-color: #eee;
+}
+
+#inputUser:focus-visible, #inputPassword:focus-visible {
+  transition: .5s!important;
+  border-color: #000;
+  outline: none;
+}
+
+#inputPassword {
+
 }
 
 .checkbox {
@@ -25,10 +96,6 @@ form {
   margin-bottom: 3vh;
 }
 
-.inputSign {
-  margin-bottom: 2vh;
-}
-
 /* .username:invalid {
   transition: .5s;
   border: 2px dashed #f32d2daa;
@@ -38,51 +105,38 @@ form {
   transition: .5s;
 } 
 
-
-
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 30vw;
-  height: 75vh;
-  border: solid 1px #0003;
-  border-radius: 20px;
-  box-shadow: 2px 2px #0003;
-}
-
-.logo {
-  width: 7vw; 
-  height: 7vw; 
-  margin-top: 1vh;
-  margin-bottom: 3;
-}
-
-.title {
+.content-inputSign {
+  background: #000;
+  width: fit-content;
+  height: fit-content;
   margin-bottom: 3vh;
 }
 
 .inputSign {
-  color: #fff;
-  border: solid 1px #48f;
-  border-radius: 20px;
+  /* color: #fff; */
+  border: solid 1px #000;
+  /* border-radius: 20px; */
   width: 20vw;
   height: 6vh;
-  background-color: #48f;
-  transition: 1s;
+  /* background-color: #48f; */
+  transition: .7s;
+  margin: 0px;
 }
 
 .inputSign:hover {
-  border: solid 1px #59f;
-  background-color: #59f;
+  /* border: solid 1px #59f; */
+  /* background-color: #59f; */
   transition: 1s;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 .inputSign:active {
-  border: solid 1px #37f;
+  /* border: solid 1px #37f; */
   background-color: #37f;
-  transition: .3s;
+  transition: .3s!important;
 }
 
+.inputSign:hover {
+  translate: -1vh -1vh;
+  transition: 1s;
+}

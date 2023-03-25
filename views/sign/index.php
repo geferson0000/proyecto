@@ -5,12 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/public/css/style-form-placeholder.css" />
+<link rel="stylesheet" href="<?php echo constant('URL'); ?>views/public/css/color.css">
   <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/sign/style.css">
   <title>Document</title>
 </head>
 <body>
-<form action="<?php echo constant('URL'); ?>./sign/login" method="post">
-  <input value="<?php echo $_SESSION["token"]; ?>" name="csrf" id="csrf" style="display: none;" >
+<div class="background"><div></div></div>
+<div class="content-form">
+<div class="diagonal"></div>
+
+  <form action="<?php echo constant('URL'); ?>./sign/login" method="post">
+    <input value="<?php echo $_SESSION["token"]; ?>" name="csrf" id="csrf" style="display: none;" >
 
   <!-- part 1 logo and title -->
   <img class="logo" src="<?php echo constant('URL'); ?>views/public/img/logo.png" alt="100%-San-Agustin" />
@@ -55,15 +60,18 @@
       remember me
     </label>
   </div>
-
+  
   <!-- part 5 input - button -->
-  <input type="submit" value="sign in" class="inputSign" />
-
+  <div class="content-inputSign">
+    <input type="submit" value="sign in" class="inputSign" />
+  </div>
+  
   <a class="linkSignup" href="signup.php">Do not you have any account?</a>
-
+  
   <!-- part 6 footer-->
   <p class="text-muted textFooter">&copy; 2022-2023</p>
 </form>
+</div>
 
 <script type="module" src="<?php echo constant('URL'); ?>views/sign/app.js"></script>
   
