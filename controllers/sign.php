@@ -15,11 +15,9 @@ class Sign extends Controller {
     try {
       $_SESSION['user'] = $this->model->login($_POST['username'], $_POST['password']);
     } catch (\Throwable $th) {
-      echo "<div>";
-      print_r($th);
-      echo "</div>";
+      $_SESSION['user'] = ["error" => $th]; 
     }
-    return print_r(json_encode($_SESSION['user']));
+    return json_encode($_SESSION['user']);
   }
 
   function logout(){

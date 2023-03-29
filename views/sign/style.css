@@ -70,6 +70,30 @@ body {
   transition: .5s!important;
 }
 
+.errorDiv {
+  display: none;
+  border: solid 2px var(--cancel);
+  background-color: #e6b2b2;
+  color: #cf0606;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  height: 6vh;
+  margin-bottom: 1vh;
+}
+
+.errorRequired {
+  display: none;
+  border: solid 2px var(--warning);
+  background-color: #feffdab4;
+  color: #817400;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  height: 6vh;
+  margin-bottom: 1vh;
+}
+
 #inputUser:hover, #inputPassword:hover {
   background-color: #eee;
 }

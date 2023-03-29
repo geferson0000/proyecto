@@ -48,6 +48,8 @@
       <!-- required autofocus="false" -->
       <label for="inputPassword">Password</label>
     </div>
+    <div class="errorDiv">las credenciales son incorrectas</div>
+    <div class="errorRequired">los campos son requeridos</div>
     <!-- part 4 input checkbox -->
     <div class="checkbox" role="button">
       <label class="labelCheckbox">

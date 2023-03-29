@@ -34,8 +34,14 @@ class App {
       // loadModel(with name "controllerName")
       $controller->loadModel($url[0]);
       
-      // method exist?
-      isset($url[1]) ? $controller->{$url[1]}() : $controller->render();
+      try {
+        // method exist?
+        isset($url[1]) ? print_r($controller->{$url[1]}()) : $controller->render();
+      } catch (\Throwable $th) {
+        var_dump($th);
+        throw $th;
+      }
+
 
     } else {
       $controller = new ControllerErr();
