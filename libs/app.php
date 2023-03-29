@@ -16,13 +16,6 @@ class App {
     $url = rtrim($url, '/');
     $url = explode('/', $url);
     // url shape is /controllerName/method/ => url[0]=controllerName / url[1]=method
-
-    echo "
-      <script> 
-        console.log('url[0] is ' + '/$url[0]/'); 
-        console.log('url[1] is ' + '/$url[1]/'); 
-      </script>
-    ";
     
     // folder/controllerName.php
     $fileControllers = './controllers/' . $url[0] . '.php';

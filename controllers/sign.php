@@ -12,8 +12,14 @@ class Sign extends Controller {
   }
 
   function login(){
-    $_SESSION['user'] = $this->model->login($_POST['username'], $_POST['password']);
-    $this->reload();
+    try {
+      $_SESSION['user'] = $this->model->login($_POST['username'], $_POST['password']);
+    } catch (\Throwable $th) {
+      echo "<div>";
+      print_r($th);
+      echo "</div>";
+    }
+    return print_r(json_encode($_SESSION['user']));
   }
 
   function logout(){
@@ -26,5 +32,6 @@ class Sign extends Controller {
     header("location: $page");
     exit();
   }
+
 }
 ?>
