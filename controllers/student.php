@@ -14,8 +14,7 @@ class Student extends Controller {
   }
 
   function get() {
-    $this->view->message = $this->model->get();
-    $this->message = $this->view->message;
+    return json_encode($this->model->get());
   }
   
   function insert(){

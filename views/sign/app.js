@@ -26,11 +26,7 @@ function errorCredentials(data) {
 }
 
 $inputSubmit.addEventListener("click", async (e) => {
-  let headersList = {
-    "Accept": "*/*",
-    "User-Agent": "Thunder Client (https://www.thunderclient.com)"
-  } 
-  
+
   let bodyContent = new FormData();
   bodyContent.append("username", $inputUsername.value);
   bodyContent.append("password", $inputPassword.value);
@@ -39,7 +35,6 @@ $inputSubmit.addEventListener("click", async (e) => {
     let response = await fetch("http://localhost/proyecto/sign/login", { 
       method: "POST",
       body: bodyContent,
-      headers: headersList
     });
 
     let data = await response.text();

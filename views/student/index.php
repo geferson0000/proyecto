@@ -38,44 +38,9 @@
       <div class='table-header'><b>ID</b></div>
       <div class='table-header'><b>cedula</b></div>
       <div class='table-header'><b>1st name</b></div>
-      <!-- <div class='table-header'>2nd name</div> -->
       <div class='table-header'><b>1st surname</b></div>
-      <!-- <div class='table-header'>2nd surname</div> -->
       <div class='table-header'><b>gender</b></div>
       <div class='table-header'><b>birthdate</b></div>
-      <!-- <div class='table-header'>adress</div> -->
-      <!-- <div class='table-header'>phone</div> -->
-      <?php
-      $id = 0;
-      foreach ($this->message as $student) {
-
-        if ($student->gender == 1){
-          $gender = "M";
-        } else {
-          $gender = "F";
-        }
-
-        $id += 1;
-        $color = $id % 2;
-
-        if ($color == 0) {
-          $colorRow = "dark";
-        } else {
-          $colorRow = "light";
-        }
-
-        echo "<div class='table-item $colorRow'> $id </div>";
-        echo "<div class='table-item $colorRow'> $student->cedula </div>";
-        echo "<div class='table-item $colorRow'> $student->firstName </div>";
-        // echo "<div class='table-item $colorRow'> $student->SecondName </div>";
-        echo "<div class='table-item $colorRow'> $student->firstSurname </div>";
-        // echo "<div class='table-item $colorRow'> $student->secondSurname </div>";
-        echo "<div class='table-item $colorRow'> $gender </div>";
-        echo "<div class='table-item $colorRow'> $student->birthdate </div>";
-        // echo "<div class='table-item $colorRow'> $student->adress </div>";
-        // echo "<div class='table-item $colorRow'> $student->phone </div>";
-      }
-      ?>
     </div>
     <div class="table-number">1</div>
   </div>
@@ -107,5 +72,6 @@
   <div class="modal-edit"></div>
 </div>
 <script type="module" src="<?php echo constant('URL'); ?>views/student/app.js"></script>
+<script type="module" src="<?php echo constant('URL'); ?>views/student/request.js"></script>
 </body>
 </html>

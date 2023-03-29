@@ -8,7 +8,7 @@
 <div class="navbar">
   <!-- NAV TOP -->
   <div class="nav-top">
-    <a class="nav-icon" href="index.php">
+    <a class="nav-icon" href="<?php echo constant("URL"); ?>">
       <img src="<?php echo constant('URL'); ?>views/public/img/logo.png" class="logo" alt="100%SanAgustin"></img>
     </a>
   </div>
