@@ -1,4 +1,4 @@
-# proyecto MVC
+# proyecto MVC usando APIs
 
 Este proyecto es una extension al modelo MVC de la rama [master](https://github.com/geferson0000/proyecto/tree/master)
 
