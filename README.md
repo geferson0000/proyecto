@@ -1,6 +1,6 @@
 # proyecto MVC usando APIs
 
-Este proyecto es una extension al modelo MVC de la rama [master](https://github.com/geferson0000/proyecto/tree/master)
+Este proyecto es una extension al modelo de APIs de la rama projectMVC [master](https://github.com/geferson0000/proyecto/tree/projectMVC)
 
 ## tips de instalacion
 
