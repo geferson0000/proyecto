@@ -1,7 +1,7 @@
 const $linkBootstrap = document.createElement("link");
 
 $linkBootstrap.setAttribute("rel", "stylesheet");
-$linkBootstrap.setAttribute("href", "views/public/css/bootstrap.css");
+$linkBootstrap.setAttribute("href", "views/public/bootstrap/CSS/bootstrap.css");
 document.head.appendChild($linkBootstrap);
 
 const $linkColor = document.createElement("link");
