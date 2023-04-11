@@ -2,17 +2,10 @@
   --table: #9d9c9c;
 }
 
+main {
+  grid-column: 2/3;
+  justify-self: center;
 
-body {
-  margin: 0px;
-  padding: 0px;
-
-  /* colors */
-  /* background-color: #5d67f1; */
-}
-
-
-.content {
   /* flex */
   display: flex;
   flex-direction: row-reverse;
@@ -20,8 +13,8 @@ body {
   justify-content: space-evenly;
 
   /* style */
-  width: 77.5vw;
-  margin-left: 20vw;
+  width: 97.5%;
+  margin-top: 1.5vw;
   padding-top: 5vh;
   padding-bottom: 0px;
   border-radius: 20px;

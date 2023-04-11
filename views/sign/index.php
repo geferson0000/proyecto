@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/public/css/style-form-placeholder.css" />
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/public/css/color.css">
   <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/sign/style.css">
-  <title>Document</title>
+  <title>login</title>
 </head>
 <body>
 <div class="background"><div></div></div>

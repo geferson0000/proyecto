@@ -35,7 +35,7 @@ $modalClose.addEventListener("click", (e) => {
 
 const $modalAddForm = document.querySelector(".modal-add-form");
 
-import validator from "http://localhost/proyecto/views/public/Javascript/validate.js";
+import validator from "http://localhost/proyecto/views/public/javascript/validate.js";
 let number = 0;
 for (let element of $modalAddForm) {
   number++;

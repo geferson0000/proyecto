@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
+
+<head>
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student</title>
   <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/student/style.css">
   <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/student/modal.css">
-  <title>Document</title>
 </head>
+
 <body>
-<?php require "views/header.php"; ?>
-<div class='content'>
+<?php 
+  include_once "views/navbar.php";
+  include_once "views/header.php"; 
+?>
+<main>
   <div>
     <div class="control">
       <div class="control-buttons">
@@ -20,7 +25,7 @@
         <button class="controlSeeMore" value="see more">
           <img src="<?php echo constant("URL") ?>views/public/img/editAnotherUser.svg" alt="seeMore">
         </button>
-        <button  class="controlEdit" value="edit">
+        <button class="controlEdit" value="edit">
           <img src="<?php echo constant("URL") ?>views/public/img/edit.svg" alt="edit">
         </button>
         <button class="controlDelete" value="delete">
@@ -62,16 +67,17 @@
         <input type="radio" id="css" name="fav_language" value="CSS" minlength="4" maxlength="20" required>
         <label for="css">female</label>
       </div>
-      <input type="tel" placeholder="phone" name="phone"  minlength="4" maxlength="20" required>
-      <input type="date" placeholder="birhdate" name="birhdate"  minlength="4" maxlength="20" required>
-      <input type="" placeholder="adress" name="adress"  minlength="4" maxlength="20" required>
+      <input type="tel" placeholder="phone" name="phone" minlength="4" maxlength="20" required>
+      <input type="date" placeholder="birhdate" name="birhdate" minlength="4" maxlength="20" required>
+      <input type="" placeholder="adress" name="adress" minlength="4" maxlength="20" required>
       <button id="modal-add-submit" type="submit">save</button>
     </form>
-  </div> 
+  </div>
   <div class="modal-seeMore"></div>
   <div class="modal-edit"></div>
-</div>
+</main>
 <script type="module" src="<?php echo constant('URL'); ?>views/student/app.js"></script>
 <script type="module" src="<?php echo constant('URL'); ?>views/student/request.js"></script>
 </body>
+
 </html>
