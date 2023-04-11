@@ -1,165 +1,165 @@
-body {
-  margin: 0px;
-  display: flex;
-  align-items: center;
+*{
+  margin: 10;
+  padding: 10;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif; /*El Link se saca en Google Fonts*/
+
 }
 
-.background {
-  background-image: url('../public/img/foto1.jpg');
+body{
+  background-image: url(../public/img/foto1.jpg);
   background-size: cover;
-  height: 100vh;
-  width: 65vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.background > div {
-  background-color: #0008;
-  height: 100%;
+main{
   width: 100%;
+  padding: 20px;
+  margin: auto;
+  margin-top: 100px;
 }
 
-.content-form {
-  /* background-color:  */
+.contenedor__todo{
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+
+.caja__trasera{
+  width: 95%; /*El Tamaño del cuadro*/
+  padding: 00px 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 35vw;
-  height: 100vh;
-  /* overflow: visible!important; */
+  backdrop-filter: blur(10px);
+  background-color: rgba(13, 17, 228, 0.5);
 }
 
-.diagonal {
+/*Esto es para personalizar las letras y lo que esta adentro del cuadro*/
+.caja__trasera div{ 
+  margin: 100px 40px;
+  color: white;
+  transition: all 500ms;
+}
+
+
+.caja__trasera div p,
+.caja__trasera div button{
+  margin-top: 30px;
+}
+
+/*Perzonalización del titulo*/
+.caja__trasera div h3{
+  font-weight: 400;
+  font-size: 26px;
+}
+
+/*Perzonalización de Botón*/
+.caja__trasera button{
+  padding: 10px 40px;
+  border: 2px solid white;
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer; /*Esto le da vida al botón y el usuario sabe que le puede dar click*/
+  color: white;
+  transition: all 500ms; /*Velocidad en la que cambia el color*/
+}
+
+.caja__trasera button:hover{ /*Esto es para cuando el mouse este encima del botón, cambie de color*/
+  background: white;
+  color: blue;
+}
+
+/*De aquí en adelante es perzonalización de los Formularios*/
+
+.contenedor__login-register{
+  display: flex; /*Esto es la posición*/
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+  top: -185px;
+  left: 0px;
+
+  transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /*Esto es la velocidad con la que se hará la transacción de un cuadro a otro*/
+
+}
+
+
+.contenedor__login-register > .form {
+  width: 100%;
+  padding: 80px 20px;
+  background: white;
   position: absolute;
-  clip-path: polygon(100% 0%, 100% 0%, 0% 100%, 100% 100%);
-  background-color: #37f;
-  width: 35vw;
-  height: 100vh;
-  z-index: 5;
+  border-radius: 20px; /*El Borde*/
 }
 
-.content-form > .form {
-  z-index: 20!important;
-  width: 30vw;
-  height: 80vh;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: solid 2px #0008;
-  /* border-radius: 20px; */
-  box-shadow: .5vw .5vw 0px #000;
+.contenedor__login-register > .form h2{
+  font-size: 30px;
+  text-align: center; /*Esto centra el titulo*/
+  margin-bottom: 20px; /*El espacio*/
+  color: aqua;
 }
 
-.logo {
-  width: 7vw; 
-  height: 7vw; 
-  margin-top: 1vh;
-  margin-bottom: 3;
+.contenedor__login-register > .form input{ /*Las casillas del inicio*/
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  background: #F2F2F2;
+  font-size: 16px; /*tamaño del texto*/
 }
 
-.title {
-  margin-bottom: 3vh;
-  font-weight: bolder;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', BlinkMacSystemFont, 'Segoe UI', system-ui, -apple-system, sans-serif;
-  font-size: 2em;
+.contenedor__login-register > .form button{
+  padding: 10px 40px;
+  margin-top: 50px;
+  border: none;
+  font-size: 14px;    
+  background: rgba(31, 45, 167, 0.932);
+  color: wheat;
+  cursor: pointer;
 }
 
-#inputUser, #inputPassword  {
-  border: solid 2px #0000;
-  border-bottom-color: #000;
-  transition: .5s!important;
+
+.formulario__login{
+  opacity: 1;
+  display: block;
 }
 
-.errorDiv {
+.formulario__register{
   display: none;
-  border: solid 2px var(--cancel);
-  background-color: #e6b2b2;
-  color: #cf0606;
-  justify-content: center;
-  align-items: center;
-  width: 20vw;
-  height: 6vh;
-  margin-bottom: 1vh;
 }
 
-.errorRequired {
-  display: none;
-  border: solid 2px var(--warning);
-  background-color: #feffdab4;
-  color: #817400;
-  justify-content: center;
-  align-items: center;
-  width: 20vw;
-  height: 6vh;
-  margin-bottom: 1vh;
-}
+/*Trabajando en el responsive design, es decir, arreglar la pág cuando se minimicen los pixles*/
+@media screen and (max-width: 850px) {
+  main{
+      margin-top: 10px;
+  }
 
-#inputUser:hover, #inputPassword:hover {
-  background-color: #eee;
-}
+  .caja__trasera{
+      max-width: 350px;
+      height: 350px;
+      flex-direction: column;
+      margin: auto;
+  }
 
-#inputUser:focus-visible, #inputPassword:focus-visible {
-  border-color: #000;
-  outline: none;
-}
+  .caja__trasera div{
+      margin: 10px;
+      position: absolute;
+  }
 
-.checkbox {
-  translate: -5vw 0vw;
-  margin-bottom: 3vh;
-}
+  /*Formulario*/
+  .contenedor__login-register{
+      top: -10px;
+      left: -5px;
+      margin: auto;
+  }
 
-.inputCheckbox {
-  width: 2.5vw;
-  height: 2.5vh;
-  translate: 0px 3px;
-}
-
-.textFooter {
-  margin-top: 5vh;
-  margin-bottom: 3vh;
-}
-
-/* .username:invalid {
-  transition: .5s;
-  border: 2px dashed #f32d2daa;
-}  */
-
-.username:valid{
-  transition: .5s;
-} 
-
-.content-inputSign {
-  background: #000;
-  width: fit-content;
-  height: fit-content;
-  margin-bottom: 3vh;
-}
-
-.inputSign {
-  /* color: #fff; */
-  border: solid 1px #000;
-  /* border-radius: 20px; */
-  width: 20vw;
-  height: 6vh;
-  /* background-color: #48f; */
-  transition: .7s;
-  margin: 0px;
-}
-
-.inputSign:hover {
-  /* border: solid 1px #59f; */
-  /* background-color: #59f; */
-  transition: 1s;
-  /* border-radius: 10px; */
-}
-
-.inputSign:active {
-  /* border: solid 1px #37f; */
-  background-color: #37f;
-  transition: .3s!important;
-}
-
-.inputSign:hover {
-  translate: -1vh -1vh;
-  transition: 1s;
+  .contenedor__login-register > .form {
+      position: relative;
+      
+  }
 }
