@@ -9,25 +9,33 @@ function errorCredentials(data) {
   console.log("Las crendeciales estan malas");
 }
 
-$inputSign.addEventListener("click", async (e) => {
+const connection =  async (e) => {
 
-let bodyContent = new FormData();
-bodyContent.append("username", $inputUsername.value);
-bodyContent.append("password", $inputPassword.value);
+  let bodyContent = new FormData();
+  bodyContent.append("username", $inputUsername.value);
+  bodyContent.append("password", $inputPassword.value);
+  
+    let response = await fetch("http://localhost/proyecto/sign/login", { 
+      method: "POST",
+      body: bodyContent,
+    });
+  
+    let data = await response.text();
+    data = JSON.parse(data);
+  
+    //! credentials are valid
+    data.password == $inputPassword.value && data.username == $inputUsername.value
+      ? location.reload()
+      : errorCredentials(data);
+}
 
-  let response = await fetch("http://localhost/proyecto/sign/login", { 
-    method: "POST",
-    body: bodyContent,
-  });
+$inputSign.addEventListener("click", connection)
+document.addEventListener("keypress", (event) => {
+  if (event.key == "Enter" || event.key === "z") {
+    connection();
+  }
+});
 
-  let data = await response.text();
-  data = JSON.parse(data);
-
-  //! credentials are valid
-  data.password == $inputPassword.value && data.username == $inputUsername.value
-    ? location.reload()
-    : errorCredentials(data);
-})
 
 
 
