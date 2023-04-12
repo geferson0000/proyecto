@@ -1,4 +1,4 @@
-let response = await fetch("http://localhost/proyecto/student/get", { 
+let response = await fetch("http://localhost/proyecto/student/api", { 
   method: "GET"
 });
 
