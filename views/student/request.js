@@ -1,4 +1,9 @@
-let response = await fetch("http://localhost/proyecto/student/api", { 
+const $url = document.querySelector(".url");
+
+let url = $url.textContent + "student/api";
+console.log(url);
+
+let response = await fetch(url, { 
   method: "GET"
 });
 

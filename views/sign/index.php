@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="<?php echo constant("URL"); ?>/views/sign/style.css"> <!--Aquí va el link del Css-->
 </head>
 <body>
+<?php
+$url = constant("URL");
+echo "<div class='url'>$url</div>";
+?>
   <main>
     <!--Aquí esta contenido el login el nombre que tenga es el que va a ir en el ccs para personalizarlo-->
     <div class="contenedor__todo">

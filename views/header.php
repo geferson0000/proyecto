@@ -1,5 +1,8 @@
 <!-- header -->
-
+<?php
+$url = constant("URL");
+echo "<div class='url'>$url</div>";
+?>
 <header>
     <div class="nav-iconUser">
       <img src="<?php echo constant('URL'); ?>views/public/img/user.svg" />

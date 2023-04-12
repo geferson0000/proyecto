@@ -11,19 +11,19 @@ class Student extends Controller
     $this->view->render('student');
   }
 
-  public function apiGet():array
+  public function apiGET():array
   {
     $response = $this->model->get();
     return $response;
   }
 
-  public function apiPost():array
+  public function apiPOST():array
   {
     $response = $this->model->insert($_POST);
     return $response;
   }
 
-  public function apiPut():array
+  public function apiPUT():array
   {
     $response = $this->model->update(
       $_GET["student"], 
@@ -33,7 +33,7 @@ class Student extends Controller
     return $response;
   }
   
-  public function apiDelete():array
+  public function apiDELETE():array
   {
     $response = $this->model->delete($_GET["cedula"]);
     return $response;
@@ -44,24 +44,8 @@ class Student extends Controller
     try 
     {
       $method = ($_SERVER["REQUEST_METHOD"]);
-      switch ($method)
-      {
-        case 'GET':
-          $response = $this->apiGet();
-        break;
-
-        case 'POST':
-          $response = $this->apiPost();
-        break;
-
-        case 'PUT':
-          $response = $this->apiPut();
-        break;
-
-        case 'DELETE':
-          $response = $this->apiDelete();
-        break;
-      } 
+      $method = "api" . $method;
+      $response = $this->{$method}();
       header("http/ 200 OK");
       return json_encode($response);
     }
