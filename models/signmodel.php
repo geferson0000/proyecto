@@ -16,7 +16,7 @@ class signModel extends Model{
 
   public function login($username, $password){
     $text = "SELECT cedula, firstName FROM student WHERE cedula = $password and firstName = '$username'";
-    $query = $this->db->connect()->query($text)->fetchAll();
+    $query = $this->db->getConnection()->query($text)->fetchAll();
     $user = new User($query[0][1], $query[0][0]);
     $user->id = $user->username == $username && $user->password == $password 
     ? session_id() 

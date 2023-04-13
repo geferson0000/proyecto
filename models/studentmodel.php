@@ -20,7 +20,6 @@ class studentModel extends Model
   private $tableId = "cedula";
   public function __construct()
   {
-    // echo "<div class='result'>new Model loaded</div>";
     parent::__construct();
   }
 
@@ -29,7 +28,7 @@ class studentModel extends Model
     $items = [];
 
     $text = "SELECT * FROM student";
-    $query = $this->db->connect()->query($text)->fetchAll();
+    $query = $this->db->getConnection()->query($text)->fetchAll();
     
     foreach($query as $row)
     {
@@ -67,7 +66,7 @@ class studentModel extends Model
     student (cedula, firstName, secondName, firstSurname, secondSurname, adress, phone, gender, birthdate)
     values (:cedula, :firstName, :secondName, :firstSurname, :secondSurname,:adress, :phone, :gender, :birthdate)";
     
-    $query = $this->db->connect()->prepare($sql);
+    $query = $this->db->getConnection()->prepare($sql);
     return ["status" => $query->execute($datas)];
   }
 
@@ -83,7 +82,7 @@ class studentModel extends Model
     SET $column=:$column
     WHERE $this->tableId=:$this->tableId";
 
-    $action = $this->db->connect()->prepare($sql);
+    $action = $this->db->getConnection()->prepare($sql);
     return ["status" => $action->execute($data)]; 
   }
   
@@ -95,7 +94,7 @@ class studentModel extends Model
     $sql = "DELETE FROM $this->table 
     WHERE $this->tableId=:$this->tableId";
 
-    $action = $this->db->connect()->prepare($sql);
+    $action = $this->db->getConnection()->prepare($sql);
     return ["status" => $action->execute($data)]; 
   }
 }
