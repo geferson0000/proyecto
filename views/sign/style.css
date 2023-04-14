@@ -1,0 +1,165 @@
+*{
+  margin: 10;
+  padding: 10;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif; /*El Link se saca en Google Fonts*/
+
+}
+
+body{
+  background-image: url(../public/img/foto1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+main{
+  width: 100%;
+  padding: 20px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.contenedor__todo{
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+
+.caja__trasera{
+  width: 95%; /*El Tamaño del cuadro*/
+  padding: 00px 20px;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(13, 17, 228, 0.5);
+}
+
+/*Esto es para personalizar las letras y lo que esta adentro del cuadro*/
+.caja__trasera div{ 
+  margin: 100px 40px;
+  color: white;
+  transition: all 500ms;
+}
+
+
+.caja__trasera div p,
+.caja__trasera div button{
+  margin-top: 30px;
+}
+
+/*Perzonalización del titulo*/
+.caja__trasera div h3{
+  font-weight: 400;
+  font-size: 26px;
+}
+
+/*Perzonalización de Botón*/
+.caja__trasera button{
+  padding: 10px 40px;
+  border: 2px solid white;
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer; /*Esto le da vida al botón y el usuario sabe que le puede dar click*/
+  color: white;
+  transition: all 500ms; /*Velocidad en la que cambia el color*/
+}
+
+.caja__trasera button:hover{ /*Esto es para cuando el mouse este encima del botón, cambie de color*/
+  background: white;
+  color: blue;
+}
+
+/*De aquí en adelante es perzonalización de los Formularios*/
+
+.contenedor__login-register{
+  display: flex; /*Esto es la posición*/
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+  top: -185px;
+  left: 0px;
+
+  transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /*Esto es la velocidad con la que se hará la transacción de un cuadro a otro*/
+
+}
+
+
+.contenedor__login-register > .form {
+  width: 100%;
+  padding: 80px 20px;
+  background: white;
+  position: absolute;
+  border-radius: 20px; /*El Borde*/
+}
+
+.contenedor__login-register > .form h2{
+  font-size: 30px;
+  text-align: center; /*Esto centra el titulo*/
+  margin-bottom: 20px; /*El espacio*/
+  color: aqua;
+}
+
+.contenedor__login-register > .form input{ /*Las casillas del inicio*/
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  background: #F2F2F2;
+  font-size: 16px; /*tamaño del texto*/
+}
+
+.contenedor__login-register > .form button{
+  padding: 10px 40px;
+  margin-top: 50px;
+  border: none;
+  font-size: 14px;    
+  background: rgba(31, 45, 167, 0.932);
+  color: wheat;
+  cursor: pointer;
+}
+
+
+.formulario__login{
+  opacity: 1;
+  display: block;
+}
+
+.formulario__register{
+  display: none;
+}
+
+/*Trabajando en el responsive design, es decir, arreglar la pág cuando se minimicen los pixles*/
+@media screen and (max-width: 850px) {
+  main{
+      margin-top: 10px;
+  }
+
+  .caja__trasera{
+      max-width: 350px;
+      height: 350px;
+      flex-direction: column;
+      margin: auto;
+  }
+
+  .caja__trasera div{
+      margin: 10px;
+      position: absolute;
+  }
+
+  /*Formulario*/
+  .contenedor__login-register{
+      top: -10px;
+      left: -5px;
+      margin: auto;
+  }
+
+  .contenedor__login-register > .form {
+      position: relative;
+      
+  }
+}
