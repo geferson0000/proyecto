@@ -11,7 +11,7 @@
 <body>
 <?php
 $url = constant("URL");
-echo "<div class='url'>$url</div>";
+echo "<div class='url' style='display: none;'>$url</div>";
 ?>
   <main>
     <!--Aquí esta contenido el login el nombre que tenga es el que va a ir en el ccs para personalizarlo-->

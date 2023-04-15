@@ -124,13 +124,13 @@ header {
   width: 100%;
 }
 
-.settings-list > .itemTwo > form {
+.settings-list > .itemTwo > .form {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.settings-list > .itemTwo > form > .itemTwo-input {
+.settings-list > .itemTwo > .form > .itemTwo-input {
   height: 4vh;
   width: 100%;
 
@@ -140,7 +140,7 @@ header {
   background-color: var(--cancel);
 } 
 
-.settings-list > .itemTwo > form > .itemTwo-input:hover, .settings-list > .itemOne:hover {
+.settings-list > .itemTwo > .form > .itemTwo-input:hover, .settings-list > .itemOne:hover {
   transition: .25s;
   opacity: .785;
 } 

@@ -18,15 +18,14 @@ echo "<div class='url'>$url</div>";
           </a>
         </li>
         <li class="itemTwo">
-          <form action="<?php echo constant('URL'); ?>sign/logout" method="POST">
+          <div class="form">
             <input value="<?php echo $_SESSION["token"]; ?>" name="token" id="token" style="display: none;">
             <input class="itemTwo-input" type="submit" value="Logout">
-          </form>
+          </div>
         </li>
       </ul>
     </div>
 </header>
-
 <script src="<?php echo constant('URL') ?>views/public/javascript/header.js"></script>
 <script src="<?php echo constant('URL') ?>views/public/javascript/settingsIconHeader.js"></script>
 <!-- end header -->

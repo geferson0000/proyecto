@@ -7,9 +7,25 @@ require_once './libs/view.php';
 require_once './libs/app.php';
 
 define('HOST', 'localhost');
-define('USER', 'root');
-define('PASS', 'Op.redo04');
+define('USER', 'geferson');
+define('PASS', '6048');
 define('DATABASE', 'SanAgustinPrueba');
-define('URL', 'http://localhost/proyecto/');
+
+session_start();
+
+if ($_SESSION['URL']) 
+{
+  $url = $_SESSION['URL'];
+} 
+
+else 
+{
+  $url = $_SERVER['REQUEST_URI'];
+  $url = explode('/', $url);
+  $url = "http://localhost/".$url[1]."/";
+  $_SESSION['URL'] = $url;
+}
+
+define('URL', $url);
 
 ?>

@@ -5,7 +5,8 @@ class View {
   function __construct(){
   }
 
-  function render($name) {
+  function render($name):void
+  {
     require ('./views/' . $name . '/index.php');
   }
 }
