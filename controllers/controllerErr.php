@@ -1,14 +1,31 @@
 <?php
 
-class ControllerErr extends Controller {
-  function __construct(){
+class ControllerErr extends Controller 
+{
+  private $error;
+  function __construct(object $error)
+  {
     parent::__construct();
-    $this->view->message = 'error changing the resources 404';
+    $this->error = $error;
+    $error = json_encode([
+      "message" => $this->error->getMessage(),
+      "code" => $this->error->getCode(),
+    ]);
+    print_r("
+    <div class='error' style='display: none;'>" . 
+    $error . 
+    "</div>");
   }
   
-  function render(){
+  public function render()
+  {
     $this->view->render('error');
   }
+
+  // public function getError():object
+  // {
+  //   return $this->error;
+  // }
 }
 
 ?>

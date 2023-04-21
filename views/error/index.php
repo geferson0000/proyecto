@@ -7,15 +7,34 @@
   <title>error view</title>
 </head>
 <body>
-<?php require 'views/header.php'; ?>
-  <h1 class="contentPage"><?php echo $this->message ?></h1>
-  <style>
-    .contentPage {
-      display: flex;
-      justify-content: center;
-      translate: 0px 50px;
-      color: red;
-    }
-  </style>
+<?php 
+include_once "views/navbar.php";
+include_once 'views/header.php'; 
+?>
+<main></main>
+<style>
+
+.contentPage {
+  display: flex;
+  justify-content: center;
+  translate: 0px 50px;
+  color: red;
+}
+
+.errorMessage {
+  display: flex;
+}
+
+</style>
+
+<script>
+
+const $main = document.querySelector("main");
+const $error = document.querySelector(".error");
+let error = JSON.parse($error.textContent);
+console.log(error)
+$main.textContent = error.message + error.code;
+
+</script>
 </body>
 </html>

@@ -2,6 +2,7 @@ body {
   margin: 0px;
   display: grid;
   grid-template-columns: 17.5vw 1fr;
+  grid-template-rows: 10vh;
 }
 
 a {

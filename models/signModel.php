@@ -1,5 +1,6 @@
 <?php
-class User {
+class User 
+{
   public $username;
   public $password;
   public $id;
@@ -8,13 +9,16 @@ class User {
     $this->password = $password;
   }
 }
-class signModel extends Model{
-  public function __construct(){
+class signModel extends Model
+{
+  public function __construct()
+  {
     // echo "<div class='result'>new Model loaded</div>";
     parent::__construct();
   }
 
-  public function login($username, $password){
+  public function login($username, $password)
+  {
     $text = "SELECT cedula, firstName FROM student WHERE cedula = $password and firstName = '$username'";
     $query = $this->db->getConnection()->query($text)->fetchAll();
     $user = new User($query[0][1], $query[0][0]);

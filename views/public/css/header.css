@@ -1,3 +1,7 @@
+main {
+  grid-column: 2/3;
+}
+
 header {
   position: sticky;
   grid-column: 2/3;

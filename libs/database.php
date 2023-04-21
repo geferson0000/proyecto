@@ -1,6 +1,7 @@
 <?php
 
-class Database {
+class Database 
+{
   private $host;
   private $user;
   private $password;
@@ -27,15 +28,14 @@ class Database {
     try 
     {
       $pdo = new PDO($dns, $this->user, $this->password, $options);
+      return $pdo;
     } 
     
     catch (PDOException $error) 
     {
-      $pdo = ["error" => $error->getMessage(), "message" => "database class"];
-      die();
+      throw $error;
     }
 
-    return $pdo;
   }
 
   public static function getInstance():object

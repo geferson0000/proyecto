@@ -1,8 +1,10 @@
 <?php
 
-class View {
+class View 
+{
   public $message;
-  function __construct(){
+  function __construct()
+  {
   }
 
   function render($name):void
