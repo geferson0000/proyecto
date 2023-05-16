@@ -149,3 +149,133 @@ header {
   opacity: .785;
 } 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a {
+  width: fit-content!important;
+}
+
+header {
+  background-color: #3a3f51 !important;
+  width: 82.5vw; 
+  margin: 0px!important;
+  overflow: hidden;
+}
+
+header > div > .content {
+  margin-left: 20px;
+  display: flex;
+  width: 100%;
+  height: 100% !important;
+}
+
+header > div > .content > {
+  background-color: #ffffff00 !important;
+}
+
+header > div > .content > form {
+  margin-top: 1vh;
+  height: 6vh;
+}
+
+#header-search-input1 {
+  color: white; 
+  border-radius: 10px 0px 0px 10px!important; 
+  padding: 1vh; border: solid 1px #fff0; 
+  box-shadow: inset 1px 1px 2px #0005;
+}
+
+#header-search-input2 {
+border-radius: 0px 10px 10px 0px; 
+padding: 1vh; 
+border: solid 1px #fff0; 
+color: white; 
+background-color: #1e90ff5c!important;
+}
+
+header > div > .content > .buttons > .ring {
+  margin-right: 7.5vw;
+}
+
+header > div > .content > .buttons > .ring > a > img {
+width: 30px; height: 30px;
+}
+
+header > div > .content  > .buttons > .ring > a > span {
+width: 30px; height: 30px;
+}
+
+header > div > .content  > .buttons > .userIcon {
+color: white;
+}
+
+header > div > .content  > .buttons > .userIcon > .link > img {
+width: 40px; height: 40px;
+}
+
+header > div > .content  > .buttons > .userIcon > .link > span {
+color: white;
+}
+
+
+/* header > div > .content > .buttons > .userIcon > .list {} */
+
+

@@ -1,7 +1,9 @@
 body {
   margin: 0px;
+  padding: 0px;
   display: grid;
   grid-template-columns: 17.5vw 1fr;
+  grid-auto-columns: 1000vw;
   grid-template-rows: 10vh;
 }
 
