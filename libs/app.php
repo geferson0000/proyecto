@@ -2,7 +2,7 @@
 require_once './controllers/controllerErr.php';
 class App 
 {
-  function __construct()
+  public function __construct()
   {
     session_start();
     // if there is a url after http://localhost/proyecto/ and there is a user created or the url is same to "sing/login"

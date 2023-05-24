@@ -1,0 +1,10 @@
+footer {
+  /* grid */
+  grid-column: 1/3!important; /* don't remove this atribute */
+  grid-row: 3/4!important; /* don't remove this atribute */
+
+  /* styles */
+  margin: 0px!important;
+  overflow: hidden;
+  max-width: 100vw;
+}

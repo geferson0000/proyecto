@@ -1,18 +1,5 @@
 <?php
 
-class Alumno 
-{
-  public $cedula;
-  public $firstName;
-  public $SecondName;
-  public $firstSurname;
-  public $secondSurname;
-  public $adress;
-  public $phone;
-  public $gender;
-  public $birthdate;
-
-}
 
 class studentModel extends Model
 {
@@ -22,17 +9,19 @@ class studentModel extends Model
   {
     parent::__construct();
   }
-
+  
   public function get()
   {
+    require_once "studentTemplate.php";
+    
     $items = [];
-
+    
     $text = "SELECT * FROM student";
     $query = $this->db->getConnection()->query($text)->fetchAll();
     
     foreach($query as $row)
     {
-      $item = new Alumno();
+      $item = new StudentTemplate();
       $item->cedula = $row['cedula'];
       $item->firstName    = $row['firstName'];
       $item->SecondName = $row['secondName'];

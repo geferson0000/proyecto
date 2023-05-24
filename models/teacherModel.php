@@ -1,20 +1,6 @@
 <?php
 
-class Alumno 
-{
-  public $cedula;
-  public $firstName;
-  public $SecondName;
-  public $firstSurname;
-  public $secondSurname;
-  public $adress;
-  public $phone;
-  public $gender;
-  public $birthdate;
-
-}
-
-class studentModel extends Model
+class teacherModel extends Model
 {
   private $table = "student";
   private $tableId = "cedula";

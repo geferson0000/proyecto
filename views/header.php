@@ -1,9 +1,8 @@
 <!-- header -->
 <?php
 $url = constant("URL");
-echo "<div class='url'>$url</div>";
 ?>
-
+<div id='url' ><?php print($url); ?></div>
 <link rel="stylesheet" href="<?php echo constant('URL') ?>views/public/bootstrap/CSS/bootstrap.css">
 <header class="row">
 

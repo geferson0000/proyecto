@@ -10,13 +10,14 @@
 <body>
 
 <?php
-  include_once('views/navbar.php');
-  include_once('views/header.php');
+  require_once('views/navbar.php');
+  require_once('views/header.php');
 ?>
 
 <main>
   <h1>it's working</h1>
 </main>
+<?php require_once('views/footer.php'); ?>
 </body>
 </html>
 

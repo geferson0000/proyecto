@@ -2,14 +2,13 @@ body {
   margin: 0px;
   padding: 0px;
   display: grid;
-  grid-template-columns: 17.5vw 1fr;
-  grid-auto-columns: 1000vw;
-  grid-template-rows: 10vh;
+  grid-template-columns: 15vw 1fr;
+  grid-template-rows: 10vh 1fr 20vh;
 }
 
 a {
-  color: var(--white);
-  text-decoration: none;
+  color: #0000;
+  text-decoration: none!important;
 }
 
 * {
@@ -25,18 +24,21 @@ a {
 
 
 nav { 
+  /* grid */
+  grid-column: 1/2;
+  grid-row: 1/3;
+
   /* structure */
-  position: fixed;
   padding: 0px!important;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: nowrap;
-  width: 17.5vw;
+  width: 15vw;
   height: 100vh;
   
   /* colors */ 
-  z-index: 20;
+  z-index: 10;
   color: var(--white);
   background-color: var(--Nav);
 }
@@ -130,10 +132,15 @@ nav {
   flex-direction: column;
   overflow: hidden;
   transition: .5s;
+  background-color: var(--linkActiveNav);
 }
 
 .links-list > a {
   color: var(--letterNav);
-  background-color: var(--linkActiveNav);
+  width: 100%!important;
+}
+
+.links-list > a:hover {
+  background-color: #1e90ff5c;
 }
 

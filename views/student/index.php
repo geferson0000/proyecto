@@ -8,6 +8,9 @@
   <title>Student</title>
   <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/student/style.css">
   <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/student/modal.css">
+  <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/student/modalAdd.css">
+  <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/student/modalSeeMore.css">
+  <link rel="stylesheet" href="<?php echo constant('URL'); ?>views/student/modalEditUser.css">
 </head>
 
 <body>
@@ -49,11 +52,10 @@
     </div>
     <div class="table-number">1</div>
   </div>
-  <div class="wave"></div>
 </div>
 <div class="modals">
   <div class="modal-add">
-    <img class="modal-close" src="<?php echo constant("URL") ?>views/public/img/close.svg" alt="close">
+    <img class="modal-add-close" src="<?php echo constant("URL") ?>views/public/img/close.svg" alt="close">
     <h2>Enter student information</h2>
     <form class="modal-add-form" action="#" method="post">
       <input id="modal-add-cedula" type="number" placeholder="cedula" name="cedula" minlength="4" maxlength="20" required>
@@ -73,10 +75,53 @@
       <button id="modal-add-submit" type="submit">save</button>
     </form>
   </div>
-  <div class="modal-seeMore"></div>
+  <div class="modal-seeMore">
+    <img class="modal-seeMore-close" src="<?php echo constant("URL") ?>views/public/img/close.svg" alt="close">
+    <h2>Enter student information</h2>
+    <div class="information">
+      <div>
+        <label for="names">Nombres:</label>
+        <span id="names">geferson leonaiker</span>
+      </div>
+      <div>
+        <label for="lastNames">Apellidos:</label>
+        <span id="lastNames">moreno palacios</span>
+      </div>
+      <div>
+        <label for="cedula">Cedula:</label>
+        <span id="cedula">28563229</span>
+      </div>
+      <div>
+        <label for="birthdate">Fecha de nacimiento:</label>
+        <span id="birthdate"><span>04/04/2001</span> 
+        <span>22</span>
+        <span>years</span>
+      </div>
+      <div>
+        <label for="names">Direccion:</label>        
+        <span id="adress">El Recreo</span>
+      </div>
+      <div>
+        <label for="phone">Telefono:</label>
+        <span id="phone">04129915401</span>
+      </div>
+      <div>
+        <label for="gender">Genero:</label>
+        <span id="gender">masculino</span>
+      </div>
+    </div>
+    <div class="courses"></div>
+    <div class="calendar"></div>
+  </div>
   <div class="modal-edit"></div>
+</div>
+<div class="wave"></div>
+
 </main>
+<?php require_once('views/footer.php'); ?>
 <script type="module" src="<?php echo constant('URL'); ?>views/student/app.js"></script>
+<script type="module" src="<?php echo constant('URL'); ?>views/student/modalAdd.js"></script>
+<script type="module" src="<?php echo constant('URL'); ?>views/student/modalSeeMore.js"></script>
 <script type="module" src="<?php echo constant('URL'); ?>views/student/request.js"></script>
 </body>
 

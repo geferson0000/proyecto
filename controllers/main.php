@@ -2,12 +2,12 @@
 
 class Main extends Controller 
 {
-  function __construct()
+  public function __construct()
   {
     parent :: __construct();
   }
   
-  function render()
+  public function render()
   {
     $this->view->render('main');
   }

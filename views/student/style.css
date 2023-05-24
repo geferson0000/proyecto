@@ -14,6 +14,7 @@ main {
 
   /* style */
   width: 97.5%;
+  height: fit-content;
   margin-top: 1.5vw;
   padding-top: 5vh;
   padding-bottom: 0px;

@@ -1,14 +1,13 @@
 <?php
-class Teacher extends Controller 
+class History extends Controller 
 {
   public function __construct()
   {
-    parent :: __construct();
+    parent::__construct();
   }
-  
   public function render()
   {
-    $this->view->render('teacher');
+    $this->view->render('history');  
   }
 
   public function apiGET():array
@@ -41,11 +40,23 @@ class Teacher extends Controller
 
   public function api():string
   {
-    $method = ($_SERVER["REQUEST_METHOD"]);
-    $method = "api" . $method;
-    $response = $this->{$method}();
-    header("http/ 200 OK");
-    return json_encode($response);
+    try 
+    {
+      $method = ($_SERVER["REQUEST_METHOD"]);
+      $method = "api" . $method;
+      $response = $this->{$method}();
+      header("http/ 200 OK");
+      return json_encode($response);
+    }
+      
+    catch (\Throwable $th) 
+    {
+      header("http/ 500 OK");
+      $response = json_encode($th);
+      return $response; 
+    }
   }
 }
+
+
 ?>

@@ -3,7 +3,7 @@
 class ControllerErr extends Controller 
 {
   private $error;
-  function __construct(object $error)
+  public function __construct(object $error)
   {
     parent::__construct();
     $this->error = $error;

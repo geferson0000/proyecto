@@ -2,27 +2,27 @@
 class Sign extends Controller 
 {
   public $token;
-  function __construct()
+  public function __construct()
   {
     parent :: __construct();
     $this->token = md5(uniqid(mt_rand(), true));
     $_SESSION['token'] = $this->token;
   }
   
-  function render():void
+  public function render():void
   {
     header("HTTP/ 200 ok");
     $this->view->render('sign');
   }
 
-  function login():string
+  public function login():string
   {
     header("HTTP/ 200 ok");
     $_SESSION['user'] = $this->model->login($_POST['username'], $_POST['password']);
     return json_encode($_SESSION['user']);
   }
 
-  function logout():string
+  public function logout():string
   {
     session_destroy();
     header("HTTP/ 200 ok");

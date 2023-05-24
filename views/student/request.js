@@ -1,4 +1,4 @@
-const $url = document.querySelector(".url");
+const $url = document.querySelector("#url");
 
 let url = $url.textContent + "student/api";
 

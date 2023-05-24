@@ -15,40 +15,40 @@
       <li>
         <div class="links-title">
           <img src="<?php echo constant('URL'); ?>views/public/img/dashboard.svg" alt="dashboard">
-          <span>Dashboard</span>
+          <span>Tablero</span>
         </div>
         <div class="links-list links-list-desactive">
-          <a href="">
+          <a href="<?php echo constant("URL"); ?>statistic">
             <img src="<?php echo constant('URL'); ?>views/public/img/resume.svg" alt="resumen">
-            <span>Resumen</span>
+            <span>Estadistica</span>
           </a>
-          <a href='#'>
+          <a href='<?php echo constant("URL"); ?>history'>
             <img src="<?php echo constant('URL'); ?>views/public/img/history.svg" alt="history">
-            <span>History</span>
+            <span>Historial</span>
           </a>
-          <a href='#'>
+          <a href='<?php echo constant("URL"); ?>payment'>
             <img src="<?php echo constant('URL'); ?>views/public/img/statistics.svg" alt="statistics">
-            <span>Statistics</span>
+            <span>Control de pagos</span>
           </a>
         </div>
       </li>
       <li>
         <div class="links-title">
           <img src="<?php echo constant('URL'); ?>views/public/img/register.svg" alt="register">
-          <span>Register</span>
+          <span>Registro</span>
         </div>
         <div class="links-list">
           <a href="<?php echo constant('URL'); ?>student">
             <img src="<?php echo constant('URL'); ?>views/public/img/student.svg" alt="student">
-            <span>Students</span>
+            <span>Estudiante</span>
           </a>
-          <a href='#'>
+          <a href='<?php echo constant('URL'); ?>teacher'>
             <img src="<?php echo constant('URL'); ?>views/public/img/teacher.svg" alt="teachers">
-            <span>Teachers</span>
+            <span>Profesor</span>
           </a>
           <a href='<?php echo constant('URL'); ?>course'>
             <img src="<?php echo constant('URL'); ?>views/public/img/course.svg" alt="course">
-            <span>Course</span>
+            <span>Taller</span>
           </a>
         </div>
       </li>
@@ -57,16 +57,16 @@
       <li>
         <div class="links-title">
           <img src="<?php echo constant('URL'); ?>views/public/img/settings.svg" alt="settings">
-          <span>Settings</span>
+          <span>Configuraciones</span>
         </div>
         <div class="links-list links-list-desactive">
           <a href="">
             <img src="<?php echo constant('URL'); ?>views/public/img/editMyUser.svg" alt="editMyUser">
-            <span>Edit my user</span>
+            <span>Editar mi usuario</span>
           </a>
           <a href='#'>
             <img src="<?php echo constant('URL'); ?>views/public/img/editAnotherUser.svg" alt="editAnotherUser">
-            <span>Edit another user</span>
+            <span>Editar otro usuario</span>
           </a>
         </div>
       </li>

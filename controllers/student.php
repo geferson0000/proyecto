@@ -1,12 +1,12 @@
 <?php
 class Student extends Controller 
 {
-  function __construct()
+  public function __construct()
   {
     parent :: __construct();
   }
   
-  function render()
+  public function render():void
   {
     $this->view->render('student');
   }
@@ -50,11 +50,9 @@ class Student extends Controller
       return json_encode($response);
     }
       
-    catch (\Throwable $th) 
+    catch (\Throwable $error) 
     {
-      header("http/ 500 OK");
-      $response = json_encode($th);
-      return $response; 
+      throw $error;
     }
   }
 }
