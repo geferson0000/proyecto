@@ -7,7 +7,7 @@
   border-radius: 10px;
   padding: .5em .5em;
   transition: 1s;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -25,11 +25,17 @@
 
 .modal-add-close {
   align-self: flex-end;
+  border: solid 0px #d43636d1;
   border-radius: 10px;
   
   /* colors */
   background-color: #d43636d1;
 }
+
+.modal-add-close:active {
+  background-color: #c42424e4;
+}
+
 
 .modal-add-form {
   display: grid;
@@ -122,3 +128,12 @@
 .modal-add-form > div > label {
   margin-right: 1vw;
 }
+
+.modal-add-form-input {
+  border-bottom: solid 2px var(--blue)!important;
+}
+
+.modal-add-form-input:focus {
+  border: 0px #000!important;
+}
+

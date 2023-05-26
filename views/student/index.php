@@ -45,38 +45,42 @@
     <div class="table-student">
       <div class='table-header'><b>ID</b></div>
       <div class='table-header'><b>cedula</b></div>
-      <div class='table-header'><b>1st name</b></div>
-      <div class='table-header'><b>1st surname</b></div>
-      <div class='table-header'><b>gender</b></div>
-      <div class='table-header'><b>birthdate</b></div>
+      <div class='table-header'><b>Nombre</b></div>
+      <div class='table-header'><b>Apellido</b></div>
+      <div class='table-header'><b>Genero</b></div>
+      <div class='table-header'><b>Fecha de nacimiento</b></div>
     </div>
     <div class="table-number">1</div>
   </div>
 </div>
 <div class="modals">
   <div class="modal-add">
-    <img class="modal-add-close" src="<?php echo constant("URL") ?>views/public/img/close.svg" alt="close">
-    <h2>Enter student information</h2>
-    <form class="modal-add-form" action="#" method="post">
-      <input id="modal-add-cedula" type="number" placeholder="cedula" name="cedula" minlength="4" maxlength="20" required>
-      <input type="text" placeholder="first name" name="first name" minlength="4" maxlength="20" required>
-      <input type="text" placeholder="second name" name="second name" minlength="4" maxlength="20" required>
-      <input type="text" placeholder="first surname" name="first surname" minlength="4" maxlength="20" required>
-      <input type="text" placeholder="second surname" name="second surname" minlength="4" maxlength="20" required>
+    <button class="modal-add-close">
+      <img src="<?php echo constant("URL") ?>views/public/img/close.svg" alt="close">
+    </button>
+    <h2>Ingresar la information del estudiante</h2>
+    <form class="modal-add-form" action="<?php echo constant("URL"); ?>student/api" method="post">
+      <input class="modal-add-form-input" id="modal-add-cedula" type="number" placeholder="cedula" name="cedula" minlength="4" maxlength="20" required>
+      <input class="modal-add-form-input" type="text" placeholder="Primer nombre" name="firstName" minlength="4" maxlength="20" required>
+      <input class="modal-add-form-input" type="text" placeholder="Segundo nombre" name="secondName" minlength="4" maxlength="20" required>
+      <input class="modal-add-form-input" type="text" placeholder="Primer apellido" name="firstSurname" minlength="4" maxlength="20" required>
+      <input class="modal-add-form-input" type="text" placeholder="Segundo apellido" name="secondSurname" minlength="4" maxlength="20" required>
       <div>
-        <input type="radio" id="html" name="fav_language" value="HTML" minlength="4" maxlength="20" required>
-        <label for="html">male</label>
-        <input type="radio" id="css" name="fav_language" value="CSS" minlength="4" maxlength="20" required>
-        <label for="css">female</label>
+        <input type="radio" id="html" name="gender" value="1" minlength="4" maxlength="20" required>
+        <label for="html">Masculino</label>
+        <input type="radio" id="css" name="gender" value="0" minlength="4" maxlength="20" required>
+        <label for="css">Femenina</label>
       </div>
-      <input type="tel" placeholder="phone" name="phone" minlength="4" maxlength="20" required>
-      <input type="date" placeholder="birhdate" name="birhdate" minlength="4" maxlength="20" required>
-      <input type="" placeholder="adress" name="adress" minlength="4" maxlength="20" required>
-      <button id="modal-add-submit" type="submit">save</button>
+      <input class="modal-add-form-input" type="phone" placeholder="Telefono" name="phone" minlength="4" maxlength="20" required>
+      <input class="modal-add-form-input" type="date" placeholder="Fecha de nacimiento" name="birthdate" minlength="4" maxlength="20" required>
+      <input class="modal-add-form-input" type="" placeholder="Dirección" name="adress" minlength="4" maxlength="20" required>
+      <button id="modal-add-submit" type="submit">Guardar</button>
     </form>
   </div>
   <div class="modal-seeMore">
-    <img class="modal-seeMore-close" src="<?php echo constant("URL") ?>views/public/img/close.svg" alt="close">
+    <button class="modal-seeMore-close">
+      <img src="<?php echo constant("URL") ?>views/public/img/close.svg" alt="close">
+    </button>
     <h2>Enter student information</h2>
     <div class="information">
       <div>
