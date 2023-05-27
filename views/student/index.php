@@ -35,7 +35,7 @@
           <img src="<?php echo constant("URL") ?>views/public/img/delete.svg" alt="">
         </button>
       </div>
-      <form class="control-search" action="#" method=post>
+      <form class="control-search" action="#" method=post target="_blank">
         <input class="searchText" type="search" name="search" placeholder="write student's name">
         <input class="searchSubmit" type="submit" value="search">
       </form>
@@ -58,22 +58,22 @@
     <button class="modal-add-close">
       <img src="<?php echo constant("URL") ?>views/public/img/close.svg" alt="close">
     </button>
-    <h2>Ingresar la information del estudiante</h2>
-    <form class="modal-add-form" action="<?php echo constant("URL"); ?>student/api" method="post">
-      <input class="modal-add-form-input" id="modal-add-cedula" type="number" placeholder="cedula" name="cedula" minlength="4" maxlength="20" required>
+    <h2>Ingresar la information del estudiante</h2>asdasdasdasd
+    <form class="modal-add-form">
+      <input class="modal-add-form-input" type="number" placeholder="cedula" name="cedula" minlength="4" maxlength="20" required>
       <input class="modal-add-form-input" type="text" placeholder="Primer nombre" name="firstName" minlength="4" maxlength="20" required>
       <input class="modal-add-form-input" type="text" placeholder="Segundo nombre" name="secondName" minlength="4" maxlength="20" required>
       <input class="modal-add-form-input" type="text" placeholder="Primer apellido" name="firstSurname" minlength="4" maxlength="20" required>
       <input class="modal-add-form-input" type="text" placeholder="Segundo apellido" name="secondSurname" minlength="4" maxlength="20" required>
       <div>
-        <input type="radio" id="html" name="gender" value="1" minlength="4" maxlength="20" required>
-        <label for="html">Masculino</label>
-        <input type="radio" id="css" name="gender" value="0" minlength="4" maxlength="20" required>
-        <label for="css">Femenina</label>
+        <input type="radio" id="modal-add-radio-male" name="gender" value="1" minlength="4" maxlength="20" required>
+        <label for="modal-add-radio-male">Masculino</label>
+        <input type="radio" id="modal-add-radio-female" name="gender" value="0" minlength="4" maxlength="20" required>
+        <label for="modal-add-radio-female">Femenina</label>
       </div>
       <input class="modal-add-form-input" type="phone" placeholder="Telefono" name="phone" minlength="4" maxlength="20" required>
       <input class="modal-add-form-input" type="date" placeholder="Fecha de nacimiento" name="birthdate" minlength="4" maxlength="20" required>
-      <input class="modal-add-form-input" type="" placeholder="Dirección" name="adress" minlength="4" maxlength="20" required>
+      <input class="modal-add-form-input" type="text" placeholder="Dirección" name="adress" minlength="4" maxlength="20" required>
       <button id="modal-add-submit" type="submit">Guardar</button>
     </form>
   </div>

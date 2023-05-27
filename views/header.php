@@ -80,5 +80,5 @@ $url = constant("URL");
 </header>
 <script src="<?php echo constant('URL') ?>views/public/bootstrap/JS/bootstrap.bundle.js"></script>
 <script src="<?php echo constant('URL') ?>views/public/javascript/header.js"></script>
-<script src="<?php echo constant('URL') ?>views/public/javascript/settingsIconHeader.js"></script>
+<!-- <script src="<?php echo constant('URL') ?>views/public/javascript/settingsIconHeader.js"></script> -->
 <!-- end header -->

@@ -1,7 +1,5 @@
 import { toggleModal } from "./modal.js";
 
-console.log(toggleModal);
-
 const $controlAdd = document.querySelector(".controlAdd");
 const $modal = document.querySelector(".modals");
 const $modalAdd = document.querySelector(".modal-add");
