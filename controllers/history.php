@@ -5,7 +5,7 @@ class History extends Controller
   {
     parent::__construct();
   }
-  public function render()
+  public function render():void
   {
     $this->view->render('history');  
   }
