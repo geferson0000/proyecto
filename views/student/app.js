@@ -1,3 +1,5 @@
+import reloadStudent from "./reloadStudent.js"
+
 const $modalAddForm = document.querySelector(".modal-add-form");
 
 const $modalAddFormInput = document.querySelectorAll(".modal-add-form-input");
@@ -20,5 +22,5 @@ $modalAddForm.addEventListener("submit", async (e) => {
   let data = await response.text();
   data = JSON.parse(data);
   console.log(data);
-  location.reload();
+  reloadStudent();
 });

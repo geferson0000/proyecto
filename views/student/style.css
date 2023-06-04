@@ -115,6 +115,9 @@ main {
   color: #333;
 }
 
+.marked {
+  color: red;
+}
 
 .table-item {
   /* flex */
@@ -142,6 +145,10 @@ main {
 
   /* colors */
   background-color: #fff;
+}
+
+.table-item:hover {
+  background-color: #ddd;
 }
 
 

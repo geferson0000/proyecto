@@ -75,10 +75,10 @@ class studentModel extends Model
     return ["status" => $action->execute($data)]; 
   }
   
-  public function delete($row)
+  public function delete(int $id)
   {
     $data = [
-      ":$this->tableId" => $row,
+      ":$this->tableId" => $id,
     ];
     $sql = "DELETE FROM $this->table 
     WHERE $this->tableId=:$this->tableId";

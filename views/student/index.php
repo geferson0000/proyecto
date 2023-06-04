@@ -124,9 +124,12 @@
 </main>
 <?php require_once('views/footer.php'); ?>
 <script type="module" src="<?php echo constant('URL'); ?>views/student/app.js"></script>
+<script type="module" src="<?php echo constant('URL'); ?>views/student/deletingOneStudent.js"></script>
+<script type="module" src="<?php echo constant('URL'); ?>views/student/loadStudent.js"></script>
 <script type="module" src="<?php echo constant('URL'); ?>views/student/modalAdd.js"></script>
+<script type="module" src="<?php echo constant('URL'); ?>views/student/modalEditUser.js"></script>
 <script type="module" src="<?php echo constant('URL'); ?>views/student/modalSeeMore.js"></script>
-<script type="module" src="<?php echo constant('URL'); ?>views/student/request.js"></script>
+<script type="module" src="<?php echo constant('URL'); ?>views/student/reloadStudent.js"></script>
 </body>
 
 </html>
